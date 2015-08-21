@@ -88,28 +88,57 @@ Ashleys-MacBook-Pro:~ electrikoala$ ./my.sh
 Ashleys-MacBook-Pro:~ electrikoala$ nano.sh
 -bash: nano.sh: command not found
 Ashleys-MacBook-Pro:~ electrikoala$ nano my.sh
-
-  GNU nano 2.0.6               File: my.sh                            Modified  
-
-#echo $b
-#echo $c
-
-
-#d=$(pwd)
-#echo $d
-
-#d=2
-#e=$((d+2))
-#echo $e
-
-[[ "cat" == "cat" ]]
-echo $?
-
-[[ "cat" == "dog"  ]]
-echo $?
-
-a=""
-b="cat"
-                               [ Read 38 lines ]
-^G Get Help  ^O WriteOut  ^R Read File ^Y Prev Page ^K Cut Text  ^C Cur Pos
-^X Exit      ^J Justify   ^W Where Is  ^V Next Page ^U UnCut Text^T To Spell
+Ashleys-MacBook-Pro:~ electrikoala$ a="hello"
+Ashleys-MacBook-Pro:~ electrikoala$ b="world"
+Ashleys-MacBook-Pro:~ electrikoala$ c=$a$b
+Ashleys-MacBook-Pro:~ electrikoala$ echo $c
+helloworld
+Ashleys-MacBook-Pro:~ electrikoala$ echo${#a}
+-bash: echo5: command not found
+Ashleys-MacBook-Pro:~ electrikoala$ echo ${#a}
+5
+Ashleys-MacBook-Pro:~ electrikoala$ echo ${#c}
+10
+Ashleys-MacBook-Pro:~ electrikoala$ 
+Ashleys-MacBook-Pro:~ electrikoala$ fruit="apple banana banana cherry"
+Ashleys-MacBook-Pro:~ electrikoala$ echo ${fruit/banana/durian}
+apple durian banana cherry
+Ashleys-MacBook-Pro:~ electrikoala$ echo ${fruit/#apple/durian}
+durian banana banana cherry
+Ashleys-MacBook-Pro:~ electrikoala$ cho ${fruit/#banana/durian}
+-bash: cho: command not found
+Ashleys-MacBook-Pro:~ electrikoala$ echo ${fruit/#banana/durian}
+apple banana banana cherry
+Ashleys-MacBook-Pro:~ electrikoala$ -e '\033[34;42mColor Text\033[0m'
+-bash: -e: command not found
+Ashleys-MacBook-Pro:~ electrikoala$ nano my.sh
+Ashleys-MacBook-Pro:~ electrikoala$ ./my.sh
+0
+1
+ERROR: SOMETHING went wrong.
+Ashleys-MacBook-Pro:~ electrikoala$ nano my.s
+Ashleys-MacBook-Pro:~ electrikoala$ nano my.sh
+Ashleys-MacBook-Pro:~ electrikoala$ ./my.sh
+0
+1
+ERROR: SOMETHING went wrong.
+tput: unknown terminfo capability 'steab'
+ERROR: Something went wrong.
+Ashleys-MacBook-Pro:~ electrikoala$ date
+Thu Aug 20 21:08:42 EDT 2015
+Ashleys-MacBook-Pro:~ electrikoala$ date +"%d-%m-%y"
+20-08-15
+Ashleys-MacBook-Pro:~ electrikoala$ printf "Name:\t%s\nID:t%04d\n" "Scott" "12"
+Name:	Scott
+ID:t0012
+Ashleys-MacBook-Pro:~ electrikoala$ printf "Name:\t%s\nID:t%04d\n" "Scott" "12"
+Name:	Scott
+ID:t0012
+Ashleys-MacBook-Pro:~ electrikoala$ nano my.sh
+Ashleys-MacBook-Pro:~ electrikoala$ 
+Ashleys-MacBook-Pro:~ electrikoala$ ./my.sh
+0
+1
+./my.sh: line 51: unexpected EOF while looking for matching `"'
+./my.sh: line 52: syntax error: unexpected end of file
+Ashleys-MacBook-Pro:~ electrikoala$ 
