@@ -129,4 +129,47 @@ Ashleys-MacBook-Pro:~ electrikoala$ la -la testdir/
 -bash: la: command not found
 Ashleys-MacBook-Pro:~ electrikoala$ mkdir -vp testdir.test1/test3
 Ashleys-MacBook-Pro:~ electrikoala$ mkdir -vp testdir/test1/test3
-Ashleys-MacBook-Pro:~ electrikoala$ 
+Ashleys-MacBook-Pro:~ electrikoala$ mv my.sh testdir/my.sh
+Ashleys-MacBook-Pro:~ electrikoala$ ls -la testdir
+total 8
+drwxr-xr-x   4 electrikoala  staff   136 Aug 21 12:21 .
+drwxr-xr-x+ 30 electrikoala  staff  1020 Aug 21 12:21 ..
+-rwxr-xr-x   1 electrikoala  staff   584 Aug 20 22:16 my.sh
+drwxr-xr-x   3 electrikoala  staff   102 Aug 21 12:20 test1
+Ashleys-MacBook-Pro:~ electrikoala$ cd testdir/
+Ashleys-MacBook-Pro:testdir electrikoala$ mv newfile.txt testdir
+mv: rename newfile.txt to testdir: No such file or directory
+Ashleys-MacBook-Pro:testdir electrikoala$ mv my.sh testdir
+Ashleys-MacBook-Pro:testdir electrikoala$ cd test1
+Ashleys-MacBook-Pro:test1 electrikoala$ ls test1/
+ls: test1/: No such file or directory
+Ashleys-MacBook-Pro:test1 electrikoala$ ls
+test3
+Ashleys-MacBook-Pro:test1 electrikoala$ ls test1/test2/
+ls: test1/test2/: No such file or directory
+Ashleys-MacBook-Pro:test1 electrikoala$ man rename
+
+       ing namespaces).  If a command is renamed into a  different  namespace,
+       future invocations of it will execute in the new namespace.  The rename
+       command returns an empty string as result.
+
+EXAMPLE
+       The rename command can be used to wrap the standard Tcl  commands  with
+       your  own  monitoring  machinery.  For example, you might wish to count
+       how often the source command is called:
+              rename ::source ::theRealSource
+              set sourceCount 0
+              proc ::source args {
+                  global sourceCount
+                  puts "called source for the [incr sourceCount]'th time"
+                  uplevel 1 ::theRealSource $args
+              }
+
+SEE ALSO
+       namespace(n), proc(n)
+
+KEYWORDS
+       command, delete, namespace, rename
+
+Tcl                                                                  rename(n)
+(END) 
