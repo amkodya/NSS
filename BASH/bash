@@ -141,4 +141,68 @@ Ashleys-MacBook-Pro:~ electrikoala$ ./my.sh
 1
 ./my.sh: line 51: unexpected EOF while looking for matching `"'
 ./my.sh: line 52: syntax error: unexpected end of file
-Ashleys-MacBook-Pro:~ electrikoala$ 
+Ashleys-MacBook-Pro:~ electrikoala$ nano my.sh
+Ashleys-MacBook-Pro:~ electrikoala$ ./my.sh
+0
+1
+./my.sh: line 50: print: command not found
+
+Ashleys-MacBook-Pro:~ electrikoala$ nano my.sh
+Ashleys-MacBook-Pro:~ electrikoala$ ./my.sh
+cherry
+apple banana cherry kiwi mango
+Ashleys-MacBook-Pro:~ electrikoala$ nano my.sh
+Ashleys-MacBook-Pro:~ electrikoala$ ./my.sh
+./my.sh: line 60: declare: -A: invalid option
+declare: usage: declare [-afFirtx] [-p] [name[=value] ...]
+./my.sh: line 62: office building: syntax error in expression (error token is "building")
+./my.sh: line 64: unexpected EOF while looking for matching `"'
+./my.sh: line 65: syntax error: unexpected end of file
+Ashleys-MacBook-Pro:~ electrikoala$ nano my.sh
+Ashleys-MacBook-Pro:~ electrikoala$ ./my.sh
+./my.sh: line 60: declare: -A: invalid option
+declare: usage: declare [-afFirtx] [-p] [name[=value] ...]
+./my.sh: line 62: office building: syntax error in expression (error token is "building")
+./my.sh: line 64: office building: syntax error in expression (error token is "building")
+Ashleys-MacBook-Pro:~ electrikoala$ nano my.sh
+Ashleys-MacBook-Pro:~ electrikoala$ echo "Some text"
+Some text
+Ashleys-MacBook-Pro:~ electrikoala$ nano my.sh
+
+  GNU nano 2.0.6                   File: my.sh                                  Modified  
+
+
+#echo -e $flashred"ERROR: "$none$red"Something went wrong."$none
+
+#today=$(date +"%d-%m-%y")
+#time=$(date +"%H:%M:%S")
+#print -v d "Current User:\t%s\nDate:\t\t%s @ %s\n" $USER $today $time
+#echo "$d"
+
+#a=()
+#b=("apple" "banana" "cherry")
+#echo ${b[2]}
+#b[5]="kiwi"
+#b+=("mango")
+#echo ${b[@]}
+
+#declare -A myarray
+#myarray[color]=blue
+#myarray["office building"]="HQ West"
+
+#echo ${myarray["office building"]} is ${myarray[color]}
+
+
+
+
+
+
+
+
+
+
+
+
+                                    [ Read 64 lines ]
+^G Get Help    ^O WriteOut    ^R Read File   ^Y Prev Page   ^K Cut Text    ^C Cur Pos
+^X Exit        ^J Justify     ^W Where Is    ^V Next Page   ^U UnCut Text  ^T To Spell
