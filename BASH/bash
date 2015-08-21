@@ -1,0 +1,115 @@
+Last login: Wed Aug 12 22:49:55 on ttys001
+Ashleys-MacBook-Pro:~ electrikoala$ nano my.sh
+Ashleys-MacBook-Pro:~ electrikoala$ ls
+Applications			Library
+Books				Movies
+Creative Cloud Files		Music
+Creative Cloud Files (archived)	Pictures
+Desktop				Public
+Documents			VirtualBox VMs
+Downloads			my.sh
+GitHub
+Ashleys-MacBook-Pro:~ electrikoala$ bash my.sh
+Applications			Library
+Books				Movies
+Creative Cloud Files		Music
+Creative Cloud Files (archived)	Pictures
+Desktop				Public
+Documents			VirtualBox VMs
+Downloads			my.sh
+GitHub
+Ashleys-MacBook-Pro:~ electrikoala$ chmod +x my.sh
+Ashleys-MacBook-Pro:~ electrikoala$ nano my.sh
+Ashleys-MacBook-Pro:~ electrikoala$ bash my.sh
+Applications			Library
+Books				Movies
+Creative Cloud Files		Music
+Creative Cloud Files (archived)	Pictures
+Desktop				Public
+Documents			VirtualBox VMs
+Downloads			my.sh
+GitHub
+Ashleys-MacBook-Pro:~ electrikoala$ nano ms.sh
+Ashleys-MacBook-Pro:~ electrikoala$ nano my.sh
+Ashleys-MacBook-Pro:~ electrikoala$ nano my.sh
+Ashleys-MacBook-Pro:~ electrikoala$ ./my.sh
+Applications			Library
+Books				Movies
+Creative Cloud Files		Music
+Creative Cloud Files (archived)	Pictures
+Desktop				Public
+Documents			VirtualBox VMs
+Downloads			my.sh
+GitHub
+./my.sh: line 7: syntax error near unexpected token `('
+./my.sh: line 7: `echo $greeting, world(planet)!'
+Ashleys-MacBook-Pro:~ electrikoala$ nano my.sh
+Ashleys-MacBook-Pro:~ electrikoala$ ./my.sh
+Applications			Library
+Books				Movies
+Creative Cloud Files		Music
+Creative Cloud Files (archived)	Pictures
+Desktop				Public
+Documents			VirtualBox VMs
+Downloads			my.sh
+GitHub
+./my.sh: line 7: syntax error near unexpected token `('
+./my.sh: line 7: `echo $greeting, world(planet)!'
+Ashleys-MacBook-Pro:~ electrikoala$ nano my.sh
+Ashleys-MacBook-Pro:~ electrikoala$ ./my.sh
+Hello
+
+
+Ashleys-MacBook-Pro:~ electrikoala$ nano my.sh
+Ashleys-MacBook-Pro:~ electrikoala$ ./my.sh
+Hello
+good Morning
+16
+Ashleys-MacBook-Pro:~ electrikoala$ my.sh
+-bash: my.sh: command not found
+Ashleys-MacBook-Pro:~ electrikoala$ nano my.sh
+Ashleys-MacBook-Pro:~ electrikoala$ ./my.sh
+/Users/electrikoala
+Ashleys-MacBook-Pro:~ electrikoala$ nano my.sh
+Ashleys-MacBook-Pro:~ electrikoala$ ./my.sh
+e
+Ashleys-MacBook-Pro:~ electrikoala$ nano my.sh
+Ashleys-MacBook-Pro:~ electrikoala$ ./my.sh
+4
+Ashleys-MacBook-Pro:~ electrikoala$ 
+Ashleys-MacBook-Pro:~ electrikoala$ nano my.sh
+Ashleys-MacBook-Pro:~ electrikoala$ ./my.sh
+0
+Ashleys-MacBook-Pro:~ electrikoala$ nano my.sh
+Ashleys-MacBook-Pro:~ electrikoala$ ./my.sh
+0
+1
+0
+Ashleys-MacBook-Pro:~ electrikoala$ nano.sh
+-bash: nano.sh: command not found
+Ashleys-MacBook-Pro:~ electrikoala$ nano my.sh
+
+  GNU nano 2.0.6               File: my.sh                            Modified  
+
+#echo $b
+#echo $c
+
+
+#d=$(pwd)
+#echo $d
+
+#d=2
+#e=$((d+2))
+#echo $e
+
+[[ "cat" == "cat" ]]
+echo $?
+
+[[ "cat" == "dog"  ]]
+echo $?
+
+a=""
+b="cat"
+                               [ Read 38 lines ]
+^G Get Help  ^O WriteOut  ^R Read File ^Y Prev Page ^K Cut Text  ^C Cur Pos
+^X Exit      ^J Justify   ^W Where Is  ^V Next Page ^U UnCut Text^T To Spell
