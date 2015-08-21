@@ -1,0 +1,64 @@
+Last login: Fri Aug 21 08:25:32 on ttys001
+Ashleys-MacBook-Pro:~ electrikoala$ psd
+-bash: psd: command not found
+Ashleys-MacBook-Pro:~ electrikoala$ pwd
+/Users/electrikoala
+Ashleys-MacBook-Pro:~ electrikoala$ ls
+Applications			Library
+Books				Movies
+Creative Cloud Files		Music
+Creative Cloud Files (archived)	Pictures
+Desktop				Public
+Documents			VirtualBox VMs
+Downloads			my.sh
+GitHub				my.si
+Ashleys-MacBook-Pro:~ electrikoala$ ls -l
+total 16
+drwx------   7 electrikoala  staff   238 Mar  8 20:53 Applications
+drwxr-xr-x@  4 electrikoala  staff   136 Jan 21  2015 Books
+drwx------@  3 electrikoala  staff   102 Aug  2 14:11 Creative Cloud Files
+drwx------@  4 electrikoala  staff   136 Dec  7  2014 Creative Cloud Files (archived)
+drwx------+ 23 electrikoala  staff   782 Aug 17 14:41 Desktop
+drwx------+ 16 electrikoala  staff   544 Aug  4 23:37 Documents
+drwx------+ 63 electrikoala  staff  2142 Aug 21 08:26 Downloads
+drwxr-xr-x   3 electrikoala  staff   102 Sep  2  2014 GitHub
+drwx------@ 58 electrikoala  staff  1972 Aug  9 20:15 Library
+drwx------+  5 electrikoala  staff   170 Jul 29 14:19 Movies
+drwx------+  5 electrikoala  staff   170 Sep  2  2014 Music
+drwx------+ 10 electrikoala  staff   340 Jul 29 17:03 Pictures
+drwxr-xr-x+  5 electrikoala  staff   170 Aug 28  2014 Public
+drwxr-xr-x   3 electrikoala  staff   102 Aug  9 20:27 VirtualBox VMs
+-rwxr-xr-x   1 electrikoala  staff   584 Aug 20 22:16 my.sh
+-rw-r--r--   1 electrikoala  staff   133 Aug 20 21:35 my.si
+Ashleys-MacBook-Pro:~ electrikoala$ ls -la
+total 72
+drwxr-xr-x+  29 electrikoala  staff    986 Aug 20 21:35 .
+drwxr-xr-x    6 root          admin    204 Nov 15  2014 ..
+-r--------    1 electrikoala  staff      7 Nov 15  2014 .CFUserTextEncoding
+-rw-r--r--@   1 electrikoala  staff  12292 Aug 21 08:31 .DS_Store
+drwx------  102 electrikoala  staff   3468 Aug 21 08:26 .Trash
+drwxr-xr-x    4 electrikoala  staff    136 Aug 28  2014 .adobe
+-rw-------    1 electrikoala  staff   1562 Aug 21 08:29 .bash_history
+drwxr-xr-x    3 electrikoala  staff    102 Sep  2  2014 .config
+drwx------    3 electrikoala  staff    102 Feb 21 20:33 .cups
+-rw-r--r--    1 electrikoala  staff    326 May  9 16:09 .gitconfig
+drwxr-xr-x    4 electrikoala  staff    136 Jun 28 12:04 .phet
+drwx------    5 electrikoala  staff    170 Sep  2  2014 .ssh
+drwxr-xr-x    3 electrikoala  staff    102 Mar 30 13:36 .subversion
+drwx------    7 electrikoala  staff    238 Mar  8 20:53 Applications
+drwxr-xr-x@   4 electrikoala  staff    136 Jan 21  2015 Books
+drwx------@   3 electrikoala  staff    102 Aug  2 14:11 Creative Cloud Files
+drwx------@   4 electrikoala  staff    136 Dec  7  2014 Creative Cloud Files (archived)
+drwx------+  23 electrikoala  staff    782 Aug 17 14:41 Desktop
+drwx------+  16 electrikoala  staff    544 Aug  4 23:37 Documents
+drwx------+  63 electrikoala  staff   2142 Aug 21 08:31 Downloads
+drwxr-xr-x    3 electrikoala  staff    102 Sep  2  2014 GitHub
+drwx------@  58 electrikoala  staff   1972 Aug  9 20:15 Library
+drwx------+   5 electrikoala  staff    170 Jul 29 14:19 Movies
+drwx------+   5 electrikoala  staff    170 Sep  2  2014 Music
+drwx------+  10 electrikoala  staff    340 Jul 29 17:03 Pictures
+drwxr-xr-x+   5 electrikoala  staff    170 Aug 28  2014 Public
+drwxr-xr-x    3 electrikoala  staff    102 Aug  9 20:27 VirtualBox VMs
+-rwxr-xr-x    1 electrikoala  staff    584 Aug 20 22:16 my.sh
+-rw-r--r--    1 electrikoala  staff    133 Aug 20 21:35 my.si
+Ashleys-MacBook-Pro:~ electrikoala$ 
