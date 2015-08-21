@@ -12,13 +12,51 @@ i:
 8
 9
 10
+Ashleys-MacBook-Pro:~ electrikoala$ nano my.sh
+Ashleys-MacBook-Pro:~ electrikoala$ ./my.sh
+i:
+./my.sh: line 97: delcare: command not found
+0
+Ashleys-MacBook-Pro:~ electrikoala$ nano my.sh
+Ashleys-MacBook-Pro:~ electrikoala$ ./my.sh
+i:
+Canine
+Ashleys-MacBook-Pro:~ electrikoala$ nano my.sh
+Ashleys-MacBook-Pro:~ electrikoala$ ./my.sh
+i:
+And now, a greeting
+Ashleys-MacBook-Pro:~ electrikoala$ nano my.sh
+Ashleys-MacBook-Pro:~ electrikoala$ ./my.sh
+i:
+And now, a greeting
+Ashleys-MacBook-Pro:~ electrikoala$ nano my.sh
+Ashleys-MacBook-Pro:~ electrikoala$ ./my.sh
+i:
+And now, a greeting
+1: Applications
+2: Books
+3: Creative
+4: Cloud
+5: Files
+6: Creative
+7: Cloud
+8: Files
+9: (archived)
+10: Desktop
+11: Documents
+12: Downloads
+13: GitHub
+14: Library
+15: Movies
+16: Music
+17: Pictures
+18: Public
+19: VirtualBox
+20: VMs
+21: my.sh
+22: my.si
+1: pine
+2: birch
+3: maple
+4: spruce
 Ashleys-MacBook-Pro:~ electrikoala$ 
-
-
-
-
-
-
-
-
-
