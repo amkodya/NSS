@@ -72,4 +72,61 @@ do
 	echo "You selected $animal!"
 	break
 done
+Ashleys-MacBook-Pro:~ electrikoala$ tail -f my.si
+#!/bin/bash
+#this is a bsic bash sript
+a=5
+if [ $a -gt 4 ]; then
+	echo $a is greater than 4!
+else
+	echo $a is not greater than 4!
+fi
+^C
+Ashleys-MacBook-Pro:~ electrikoala$ -f /var/log/Apache2/error_log
+-bash: -f: command not found
+Ashleys-MacBook-Pro:~ electrikoala$ mkdir testdir
+Ashleys-MacBook-Pro:~ electrikoala$ ls -la
+total 72
+drwxr-xr-x+  30 electrikoala  staff   1020 Aug 21 12:17 .
+drwxr-xr-x    6 root          admin    204 Nov 15  2014 ..
+-r--------    1 electrikoala  staff      7 Nov 15  2014 .CFUserTextEncoding
+-rw-r--r--@   1 electrikoala  staff  12292 Aug 21 08:31 .DS_Store
+drwx------  108 electrikoala  staff   3672 Aug 21 09:08 .Trash
+drwxr-xr-x    4 electrikoala  staff    136 Aug 28  2014 .adobe
+-rw-------    1 electrikoala  staff   1913 Aug 21 08:57 .bash_history
+drwxr-xr-x    3 electrikoala  staff    102 Sep  2  2014 .config
+drwx------    3 electrikoala  staff    102 Feb 21 20:33 .cups
+-rw-r--r--    1 electrikoala  staff    326 May  9 16:09 .gitconfig
+drwxr-xr-x    4 electrikoala  staff    136 Jun 28 12:04 .phet
+drwx------    5 electrikoala  staff    170 Sep  2  2014 .ssh
+drwxr-xr-x    3 electrikoala  staff    102 Mar 30 13:36 .subversion
+drwx------    7 electrikoala  staff    238 Mar  8 20:53 Applications
+drwxr-xr-x@   4 electrikoala  staff    136 Jan 21  2015 Books
+drwx------@   3 electrikoala  staff    102 Aug  2 14:11 Creative Cloud Files
+drwx------@   4 electrikoala  staff    136 Dec  7  2014 Creative Cloud Files (archived)
+drwx------+  23 electrikoala  staff    782 Aug 17 14:41 Desktop
+drwx------+  16 electrikoala  staff    544 Aug  4 23:37 Documents
+drwx------+  63 electrikoala  staff   2142 Aug 21 08:31 Downloads
+drwxr-xr-x    3 electrikoala  staff    102 Sep  2  2014 GitHub
+drwx------@  58 electrikoala  staff   1972 Aug  9 20:15 Library
+drwx------+   5 electrikoala  staff    170 Jul 29 14:19 Movies
+drwx------+   5 electrikoala  staff    170 Sep  2  2014 Music
+drwx------+  10 electrikoala  staff    340 Jul 29 17:03 Pictures
+drwxr-xr-x+   5 electrikoala  staff    170 Aug 28  2014 Public
+drwxr-xr-x    3 electrikoala  staff    102 Aug  9 20:27 VirtualBox VMs
+-rwxr-xr-x    1 electrikoala  staff    584 Aug 20 22:16 my.sh
+-rw-r--r--    1 electrikoala  staff    133 Aug 20 21:35 my.si
+drwxr-xr-x    2 electrikoala  staff     68 Aug 21 12:17 testdir
+Ashleys-MacBook-Pro:~ electrikoala$ mkdir testdir
+mkdir: testdir: File exists
+Ashleys-MacBook-Pro:~ electrikoala$ mkdir testdir/test1/test2
+mkdir: testdir/test1: No such file or directory
+Ashleys-MacBook-Pro:~ electrikoala$ -p testdir/test1/test2
+-bash: -p: command not found
+Ashleys-MacBook-Pro:~ electrikoala$ -p mkdir testdir/test1/test2
+-bash: -p: command not found
+Ashleys-MacBook-Pro:~ electrikoala$ la -la testdir/
+-bash: la: command not found
+Ashleys-MacBook-Pro:~ electrikoala$ mkdir -vp testdir.test1/test3
+Ashleys-MacBook-Pro:~ electrikoala$ mkdir -vp testdir/test1/test3
 Ashleys-MacBook-Pro:~ electrikoala$ 
