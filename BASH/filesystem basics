@@ -61,4 +61,53 @@ drwxr-xr-x+   5 electrikoala  staff    170 Aug 28  2014 Public
 drwxr-xr-x    3 electrikoala  staff    102 Aug  9 20:27 VirtualBox VMs
 -rwxr-xr-x    1 electrikoala  staff    584 Aug 20 22:16 my.sh
 -rw-r--r--    1 electrikoala  staff    133 Aug 20 21:35 my.si
+Ashleys-MacBook-Pro:~ electrikoala$ ls -lah
+total 72
+drwxr-xr-x+  29 electrikoala  staff   986B Aug 20 21:35 .
+drwxr-xr-x    6 root          admin   204B Nov 15  2014 ..
+-r--------    1 electrikoala  staff     7B Nov 15  2014 .CFUserTextEncoding
+-rw-r--r--@   1 electrikoala  staff    12K Aug 21 08:31 .DS_Store
+drwx------  102 electrikoala  staff   3.4K Aug 21 08:26 .Trash
+drwxr-xr-x    4 electrikoala  staff   136B Aug 28  2014 .adobe
+-rw-------    1 electrikoala  staff   1.5K Aug 21 08:29 .bash_history
+drwxr-xr-x    3 electrikoala  staff   102B Sep  2  2014 .config
+drwx------    3 electrikoala  staff   102B Feb 21 20:33 .cups
+-rw-r--r--    1 electrikoala  staff   326B May  9 16:09 .gitconfig
+drwxr-xr-x    4 electrikoala  staff   136B Jun 28 12:04 .phet
+drwx------    5 electrikoala  staff   170B Sep  2  2014 .ssh
+drwxr-xr-x    3 electrikoala  staff   102B Mar 30 13:36 .subversion
+drwx------    7 electrikoala  staff   238B Mar  8 20:53 Applications
+drwxr-xr-x@   4 electrikoala  staff   136B Jan 21  2015 Books
+drwx------@   3 electrikoala  staff   102B Aug  2 14:11 Creative Cloud Files
+drwx------@   4 electrikoala  staff   136B Dec  7  2014 Creative Cloud Files (archived)
+drwx------+  23 electrikoala  staff   782B Aug 17 14:41 Desktop
+drwx------+  16 electrikoala  staff   544B Aug  4 23:37 Documents
+drwx------+  63 electrikoala  staff   2.1K Aug 21 08:31 Downloads
+drwxr-xr-x    3 electrikoala  staff   102B Sep  2  2014 GitHub
+drwx------@  58 electrikoala  staff   1.9K Aug  9 20:15 Library
+drwx------+   5 electrikoala  staff   170B Jul 29 14:19 Movies
+drwx------+   5 electrikoala  staff   170B Sep  2  2014 Music
+drwx------+  10 electrikoala  staff   340B Jul 29 17:03 Pictures
+drwxr-xr-x+   5 electrikoala  staff   170B Aug 28  2014 Public
+drwxr-xr-x    3 electrikoala  staff   102B Aug  9 20:27 VirtualBox VMs
+-rwxr-xr-x    1 electrikoala  staff   584B Aug 20 22:16 my.sh
+-rw-r--r--    1 electrikoala  staff   133B Aug 20 21:35 my.si
+Ashleys-MacBook-Pro:~ electrikoala$ cd library
+Ashleys-MacBook-Pro:library electrikoala$ back
+-bash: back: command not found
+Ashleys-MacBook-Pro:library electrikoala$ cd ..
+Ashleys-MacBook-Pro:~ electrikoala$ cd library/Preferences
+Ashleys-MacBook-Pro:Preferences electrikoala$ cd ../..
+Ashleys-MacBook-Pro:~ electrikoala$ cd Library/Preference 
+-bash: cd: Library/Preference: No such file or directory
+Ashleys-MacBook-Pro:~ electrikoala$ cd Library/Preferences
+Ashleys-MacBook-Pro:Preferences electrikoala$ cd /
+Ashleys-MacBook-Pro:/ electrikoala$ Users/electrikoala
+-bash: Users/electrikoala: is a directory
+Ashleys-MacBook-Pro:/ electrikoala$ cd Users/electrikoala
+Ashleys-MacBook-Pro:~ electrikoala$ cd ~
+Ashleys-MacBook-Pro:~ electrikoala$ Library/Preferences
+-bash: Library/Preferences: is a directory
+Ashleys-MacBook-Pro:~ electrikoala$ cd Library/Preferences
+Ashleys-MacBook-Pro:Preferences electrikoala$ cd ~
 Ashleys-MacBook-Pro:~ electrikoala$ 
