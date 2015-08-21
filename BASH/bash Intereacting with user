@@ -15,10 +15,20 @@ Ashleys-MacBook-Pro:~ electrikoala$ ./my.sh -p secret - ashley k
 User:  / Pass: secret
 Ashleys-MacBook-Pro:~ electrikoala$ ./my.sh -p secret -u ashley k
 User: ashley / Pass: secret
+Ashleys-MacBook-Pro:~ electrikoala$ nano my.sh
+Ashleys-MacBook-Pro:~ electrikoala$ nano my.sh
+Ashleys-MacBook-Pro:~ electrikoala$ ./my.sh
+What is your name?
+Ashley
+What is your password?
+Whats your favorite animal?
+name: Ashley, pass: munkies, animal:
+Ashleys-MacBook-Pro:~ electrikoala$ nano my.sh
+Ashleys-MacBook-Pro:~ electrikoala$ ./my.sh
+1) cat
+2) dog
+3) bird
+4) fish
+#? fish
+You selected !
 Ashleys-MacBook-Pro:~ electrikoala$ 
-
-
-
-
-
-
