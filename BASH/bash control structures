@@ -1,0 +1,48 @@
+Last login: Thu Aug 20 21:31:51 on ttys001
+Ashleys-MacBook-Pro:~ electrikoala$ nano my.sh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  GNU nano 2.0.6               File: my.sh                            Modified  
+
+#This is a
+#multiline
+#text string
+#EndOfText
+
+
+#a=5
+#if [ $a -gt 4 ]; then
+#        echo $a is greater than 4!
+#else
+#        echo $a is not greater than 4!
+#fi
+
+#i=0
+#while [ $i -le 10 ]; do
+        echo i:$i
+        ((i+=1))
+#done
+
+
+^G Get Help  ^O WriteOut  ^R Read File ^Y Prev Page ^K Cut Text  ^C Cur Pos
+^X Exit      ^J Justify   ^W Where Is  ^V Next Page ^U UnCut Text^T To Spell
