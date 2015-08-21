@@ -1,102 +1,17 @@
-Last login: Fri Aug 21 08:54:20 on ttys001
-Ashleys-MacBook-Pro:~ electrikoala$ nano
-Ashleys-MacBook-Pro:~ electrikoala$ somefile.txt
--bash: somefile.txt: command not found
+Last login: Fri Aug 21 08:57:45 on ttys001
 Ashleys-MacBook-Pro:~ electrikoala$ ls -la
 total 72
-drwxr-xr-x+  29 electrikoala  staff    986 Aug 20 21:35 .
-drwxr-xr-x    6 root          admin    204 Nov 15  2014 ..
--r--------    1 electrikoala  staff      7 Nov 15  2014 .CFUserTextEncoding
--rw-r--r--@   1 electrikoala  staff  12292 Aug 21 08:31 .DS_Store
-drwx------  102 electrikoala  staff   3468 Aug 21 08:26 .Trash
-drwxr-xr-x    4 electrikoala  staff    136 Aug 28  2014 .adobe
--rw-------    1 electrikoala  staff   1913 Aug 21 08:57 .bash_history
-drwxr-xr-x    3 electrikoala  staff    102 Sep  2  2014 .config
-drwx------    3 electrikoala  staff    102 Feb 21 20:33 .cups
--rw-r--r--    1 electrikoala  staff    326 May  9 16:09 .gitconfig
-drwxr-xr-x    4 electrikoala  staff    136 Jun 28 12:04 .phet
-drwx------    5 electrikoala  staff    170 Sep  2  2014 .ssh
-drwxr-xr-x    3 electrikoala  staff    102 Mar 30 13:36 .subversion
-drwx------    7 electrikoala  staff    238 Mar  8 20:53 Applications
-drwxr-xr-x@   4 electrikoala  staff    136 Jan 21  2015 Books
-drwx------@   3 electrikoala  staff    102 Aug  2 14:11 Creative Cloud Files
-drwx------@   4 electrikoala  staff    136 Dec  7  2014 Creative Cloud Files (archived)
-drwx------+  23 electrikoala  staff    782 Aug 17 14:41 Desktop
-drwx------+  16 electrikoala  staff    544 Aug  4 23:37 Documents
-drwx------+  63 electrikoala  staff   2142 Aug 21 08:31 Downloads
-drwxr-xr-x    3 electrikoala  staff    102 Sep  2  2014 GitHub
-drwx------@  58 electrikoala  staff   1972 Aug  9 20:15 Library
-drwx------+   5 electrikoala  staff    170 Jul 29 14:19 Movies
-drwx------+   5 electrikoala  staff    170 Sep  2  2014 Music
-drwx------+  10 electrikoala  staff    340 Jul 29 17:03 Pictures
-drwxr-xr-x+   5 electrikoala  staff    170 Aug 28  2014 Public
-drwxr-xr-x    3 electrikoala  staff    102 Aug  9 20:27 VirtualBox VMs
--rwxr-xr-x    1 electrikoala  staff    584 Aug 20 22:16 my.sh
--rw-r--r--    1 electrikoala  staff    133 Aug 20 21:35 my.si
-Ashleys-MacBook-Pro:~ electrikoala$ cat short_file.txt
-cat: short_file.txt: No such file or directory
-Ashleys-MacBook-Pro:~ electrikoala$ cat my.sh
-#!/bin/bash
-# This is a basic bash script.
-#for i in $@
-#do
-#	echo $i
-#done
-
-#echo "there were $# arguments."
-
-#while getopts u:p:ab  option; do
-#	case $option in
-#		u) user=$OPTARG;;
-#		p) pass=$OPTARG;;
-#		a) echo "Got the A Flag";;
-#		b) echo "Got the B Flag";;
-#	esac
-#done
-
-#echo "User: $user / Pass: $pass"
-
-
-#echo "What is your name?"
-#read name
-
-#echo "What is your password?"
-#read -s pass
-
-#read -p "Whats your favorite animal?" animal
-
-#echo name: $name, pass: $pass, animal: $animal
-
-select animal in "cat" "dog" "bird" "fish"
-do
-	echo "You selected $animal!"
-	break
-done
-Ashleys-MacBook-Pro:~ electrikoala$ tail -f my.si
-#!/bin/bash
-#this is a bsic bash sript
-a=5
-if [ $a -gt 4 ]; then
-	echo $a is greater than 4!
-else
-	echo $a is not greater than 4!
-fi
-^C
-Ashleys-MacBook-Pro:~ electrikoala$ -f /var/log/Apache2/error_log
--bash: -f: command not found
-Ashleys-MacBook-Pro:~ electrikoala$ mkdir testdir
-Ashleys-MacBook-Pro:~ electrikoala$ ls -la
-total 72
-drwxr-xr-x+  30 electrikoala  staff   1020 Aug 21 12:17 .
+drwxr-xr-x+  31 electrikoala  staff   1054 Aug 21 12:25 .
 drwxr-xr-x    6 root          admin    204 Nov 15  2014 ..
 -r--------    1 electrikoala  staff      7 Nov 15  2014 .CFUserTextEncoding
 -rw-r--r--@   1 electrikoala  staff  12292 Aug 21 08:31 .DS_Store
 drwx------  108 electrikoala  staff   3672 Aug 21 09:08 .Trash
 drwxr-xr-x    4 electrikoala  staff    136 Aug 28  2014 .adobe
--rw-------    1 electrikoala  staff   1913 Aug 21 08:57 .bash_history
+-rw-------    1 electrikoala  staff   2339 Aug 21 12:25 .bash_history
 drwxr-xr-x    3 electrikoala  staff    102 Sep  2  2014 .config
 drwx------    3 electrikoala  staff    102 Feb 21 20:33 .cups
 -rw-r--r--    1 electrikoala  staff    326 May  9 16:09 .gitconfig
+-rw-------    1 electrikoala  staff     35 Aug 21 12:25 .lesshst
 drwxr-xr-x    4 electrikoala  staff    136 Jun 28 12:04 .phet
 drwx------    5 electrikoala  staff    170 Sep  2  2014 .ssh
 drwxr-xr-x    3 electrikoala  staff    102 Mar 30 13:36 .subversion
@@ -114,62 +29,121 @@ drwx------+   5 electrikoala  staff    170 Sep  2  2014 Music
 drwx------+  10 electrikoala  staff    340 Jul 29 17:03 Pictures
 drwxr-xr-x+   5 electrikoala  staff    170 Aug 28  2014 Public
 drwxr-xr-x    3 electrikoala  staff    102 Aug  9 20:27 VirtualBox VMs
--rwxr-xr-x    1 electrikoala  staff    584 Aug 20 22:16 my.sh
 -rw-r--r--    1 electrikoala  staff    133 Aug 20 21:35 my.si
-drwxr-xr-x    2 electrikoala  staff     68 Aug 21 12:17 testdir
-Ashleys-MacBook-Pro:~ electrikoala$ mkdir testdir
-mkdir: testdir: File exists
-Ashleys-MacBook-Pro:~ electrikoala$ mkdir testdir/test1/test2
-mkdir: testdir/test1: No such file or directory
-Ashleys-MacBook-Pro:~ electrikoala$ -p testdir/test1/test2
--bash: -p: command not found
-Ashleys-MacBook-Pro:~ electrikoala$ -p mkdir testdir/test1/test2
--bash: -p: command not found
-Ashleys-MacBook-Pro:~ electrikoala$ la -la testdir/
--bash: la: command not found
-Ashleys-MacBook-Pro:~ electrikoala$ mkdir -vp testdir.test1/test3
-Ashleys-MacBook-Pro:~ electrikoala$ mkdir -vp testdir/test1/test3
-Ashleys-MacBook-Pro:~ electrikoala$ mv my.sh testdir/my.sh
-Ashleys-MacBook-Pro:~ electrikoala$ ls -la testdir
-total 8
-drwxr-xr-x   4 electrikoala  staff   136 Aug 21 12:21 .
-drwxr-xr-x+ 30 electrikoala  staff  1020 Aug 21 12:21 ..
--rwxr-xr-x   1 electrikoala  staff   584 Aug 20 22:16 my.sh
-drwxr-xr-x   3 electrikoala  staff   102 Aug 21 12:20 test1
-Ashleys-MacBook-Pro:~ electrikoala$ cd testdir/
-Ashleys-MacBook-Pro:testdir electrikoala$ mv newfile.txt testdir
-mv: rename newfile.txt to testdir: No such file or directory
-Ashleys-MacBook-Pro:testdir electrikoala$ mv my.sh testdir
-Ashleys-MacBook-Pro:testdir electrikoala$ cd test1
-Ashleys-MacBook-Pro:test1 electrikoala$ ls test1/
-ls: test1/: No such file or directory
-Ashleys-MacBook-Pro:test1 electrikoala$ ls
-test3
-Ashleys-MacBook-Pro:test1 electrikoala$ ls test1/test2/
-ls: test1/test2/: No such file or directory
-Ashleys-MacBook-Pro:test1 electrikoala$ man rename
-
-       ing namespaces).  If a command is renamed into a  different  namespace,
-       future invocations of it will execute in the new namespace.  The rename
-       command returns an empty string as result.
-
-EXAMPLE
-       The rename command can be used to wrap the standard Tcl  commands  with
-       your  own  monitoring  machinery.  For example, you might wish to count
-       how often the source command is called:
-              rename ::source ::theRealSource
-              set sourceCount 0
-              proc ::source args {
-                  global sourceCount
-                  puts "called source for the [incr sourceCount]'th time"
-                  uplevel 1 ::theRealSource $args
-              }
-
-SEE ALSO
-       namespace(n), proc(n)
-
-KEYWORDS
-       command, delete, namespace, rename
-
-Tcl                                                                  rename(n)
-(END) 
+drwxr-xr-x    4 electrikoala  staff    136 Aug 21 12:22 testdir
+drwxr-xr-x    3 electrikoala  staff    102 Aug 21 12:19 testdir.test1
+Ashleys-MacBook-Pro:~ electrikoala$ mv -i overwrite_test1.txt overwrite_text2.txt
+mv: rename overwrite_test1.txt to overwrite_text2.txt: No such file or directory
+Ashleys-MacBook-Pro:~ electrikoala$ ls -la
+total 72
+drwxr-xr-x+  31 electrikoala  staff   1054 Aug 21 12:25 .
+drwxr-xr-x    6 root          admin    204 Nov 15  2014 ..
+-r--------    1 electrikoala  staff      7 Nov 15  2014 .CFUserTextEncoding
+-rw-r--r--@   1 electrikoala  staff  12292 Aug 21 08:31 .DS_Store
+drwx------  108 electrikoala  staff   3672 Aug 21 09:08 .Trash
+drwxr-xr-x    4 electrikoala  staff    136 Aug 28  2014 .adobe
+-rw-------    1 electrikoala  staff   2339 Aug 21 12:25 .bash_history
+drwxr-xr-x    3 electrikoala  staff    102 Sep  2  2014 .config
+drwx------    3 electrikoala  staff    102 Feb 21 20:33 .cups
+-rw-r--r--    1 electrikoala  staff    326 May  9 16:09 .gitconfig
+-rw-------    1 electrikoala  staff     35 Aug 21 12:25 .lesshst
+drwxr-xr-x    4 electrikoala  staff    136 Jun 28 12:04 .phet
+drwx------    5 electrikoala  staff    170 Sep  2  2014 .ssh
+drwxr-xr-x    3 electrikoala  staff    102 Mar 30 13:36 .subversion
+drwx------    7 electrikoala  staff    238 Mar  8 20:53 Applications
+drwxr-xr-x@   4 electrikoala  staff    136 Jan 21  2015 Books
+drwx------@   3 electrikoala  staff    102 Aug  2 14:11 Creative Cloud Files
+drwx------@   4 electrikoala  staff    136 Dec  7  2014 Creative Cloud Files (archived)
+drwx------+  23 electrikoala  staff    782 Aug 17 14:41 Desktop
+drwx------+  16 electrikoala  staff    544 Aug  4 23:37 Documents
+drwx------+  63 electrikoala  staff   2142 Aug 21 08:31 Downloads
+drwxr-xr-x    3 electrikoala  staff    102 Sep  2  2014 GitHub
+drwx------@  58 electrikoala  staff   1972 Aug  9 20:15 Library
+drwx------+   5 electrikoala  staff    170 Jul 29 14:19 Movies
+drwx------+   5 electrikoala  staff    170 Sep  2  2014 Music
+drwx------+  10 electrikoala  staff    340 Jul 29 17:03 Pictures
+drwxr-xr-x+   5 electrikoala  staff    170 Aug 28  2014 Public
+drwxr-xr-x    3 electrikoala  staff    102 Aug  9 20:27 VirtualBox VMs
+-rw-r--r--    1 electrikoala  staff    133 Aug 20 21:35 my.si
+drwxr-xr-x    4 electrikoala  staff    136 Aug 21 12:22 testdir
+drwxr-xr-x    3 electrikoala  staff    102 Aug 21 12:19 testdir.test1
+Ashleys-MacBook-Pro:~ electrikoala$ pwd /users/electrikoala/unix_files
+/Users/electrikoala
+Ashleys-MacBook-Pro:~ electrikoala$ ls -la
+total 72
+drwxr-xr-x+  31 electrikoala  staff   1054 Aug 21 12:25 .
+drwxr-xr-x    6 root          admin    204 Nov 15  2014 ..
+-r--------    1 electrikoala  staff      7 Nov 15  2014 .CFUserTextEncoding
+-rw-r--r--@   1 electrikoala  staff  12292 Aug 21 08:31 .DS_Store
+drwx------  108 electrikoala  staff   3672 Aug 21 09:08 .Trash
+drwxr-xr-x    4 electrikoala  staff    136 Aug 28  2014 .adobe
+-rw-------    1 electrikoala  staff   2339 Aug 21 12:25 .bash_history
+drwxr-xr-x    3 electrikoala  staff    102 Sep  2  2014 .config
+drwx------    3 electrikoala  staff    102 Feb 21 20:33 .cups
+-rw-r--r--    1 electrikoala  staff    326 May  9 16:09 .gitconfig
+-rw-------    1 electrikoala  staff     35 Aug 21 12:25 .lesshst
+drwxr-xr-x    4 electrikoala  staff    136 Jun 28 12:04 .phet
+drwx------    5 electrikoala  staff    170 Sep  2  2014 .ssh
+drwxr-xr-x    3 electrikoala  staff    102 Mar 30 13:36 .subversion
+drwx------    7 electrikoala  staff    238 Mar  8 20:53 Applications
+drwxr-xr-x@   4 electrikoala  staff    136 Jan 21  2015 Books
+drwx------@   3 electrikoala  staff    102 Aug  2 14:11 Creative Cloud Files
+drwx------@   4 electrikoala  staff    136 Dec  7  2014 Creative Cloud Files (archived)
+drwx------+  23 electrikoala  staff    782 Aug 17 14:41 Desktop
+drwx------+  16 electrikoala  staff    544 Aug  4 23:37 Documents
+drwx------+  63 electrikoala  staff   2142 Aug 21 08:31 Downloads
+drwxr-xr-x    3 electrikoala  staff    102 Sep  2  2014 GitHub
+drwx------@  58 electrikoala  staff   1972 Aug  9 20:15 Library
+drwx------+   5 electrikoala  staff    170 Jul 29 14:19 Movies
+drwx------+   5 electrikoala  staff    170 Sep  2  2014 Music
+drwx------+  10 electrikoala  staff    340 Jul 29 17:03 Pictures
+drwxr-xr-x+   5 electrikoala  staff    170 Aug 28  2014 Public
+drwxr-xr-x    3 electrikoala  staff    102 Aug  9 20:27 VirtualBox VMs
+-rw-r--r--    1 electrikoala  staff    133 Aug 20 21:35 my.si
+drwxr-xr-x    4 electrikoala  staff    136 Aug 21 12:22 testdir
+drwxr-xr-x    3 electrikoala  staff    102 Aug 21 12:19 testdir.test1
+Ashleys-MacBook-Pro:~ electrikoala$ pwd user/electrikoala/fullsail/nss/bash/Ex_Files_UnixMacOSX/excersize\ files/chapter_03/03_09_files/unix_files
+/Users/electrikoala
+Ashleys-MacBook-Pro:~ electrikoala$ ls -la
+total 72
+drwxr-xr-x+  31 electrikoala  staff   1054 Aug 21 12:25 .
+drwxr-xr-x    6 root          admin    204 Nov 15  2014 ..
+-r--------    1 electrikoala  staff      7 Nov 15  2014 .CFUserTextEncoding
+-rw-r--r--@   1 electrikoala  staff  12292 Aug 21 08:31 .DS_Store
+drwx------  108 electrikoala  staff   3672 Aug 21 09:08 .Trash
+drwxr-xr-x    4 electrikoala  staff    136 Aug 28  2014 .adobe
+-rw-------    1 electrikoala  staff   2339 Aug 21 12:25 .bash_history
+drwxr-xr-x    3 electrikoala  staff    102 Sep  2  2014 .config
+drwx------    3 electrikoala  staff    102 Feb 21 20:33 .cups
+-rw-r--r--    1 electrikoala  staff    326 May  9 16:09 .gitconfig
+-rw-------    1 electrikoala  staff     35 Aug 21 12:25 .lesshst
+drwxr-xr-x    4 electrikoala  staff    136 Jun 28 12:04 .phet
+drwx------    5 electrikoala  staff    170 Sep  2  2014 .ssh
+drwxr-xr-x    3 electrikoala  staff    102 Mar 30 13:36 .subversion
+drwx------    7 electrikoala  staff    238 Mar  8 20:53 Applications
+drwxr-xr-x@   4 electrikoala  staff    136 Jan 21  2015 Books
+drwx------@   3 electrikoala  staff    102 Aug  2 14:11 Creative Cloud Files
+drwx------@   4 electrikoala  staff    136 Dec  7  2014 Creative Cloud Files (archived)
+drwx------+  23 electrikoala  staff    782 Aug 17 14:41 Desktop
+drwx------+  16 electrikoala  staff    544 Aug  4 23:37 Documents
+drwx------+  63 electrikoala  staff   2142 Aug 21 08:31 Downloads
+drwxr-xr-x    3 electrikoala  staff    102 Sep  2  2014 GitHub
+drwx------@  58 electrikoala  staff   1972 Aug  9 20:15 Library
+drwx------+   5 electrikoala  staff    170 Jul 29 14:19 Movies
+drwx------+   5 electrikoala  staff    170 Sep  2  2014 Music
+drwx------+  10 electrikoala  staff    340 Jul 29 17:03 Pictures
+drwxr-xr-x+   5 electrikoala  staff    170 Aug 28  2014 Public
+drwxr-xr-x    3 electrikoala  staff    102 Aug  9 20:27 VirtualBox VMs
+-rw-r--r--    1 electrikoala  staff    133 Aug 20 21:35 my.si
+drwxr-xr-x    4 electrikoala  staff    136 Aug 21 12:22 testdir
+drwxr-xr-x    3 electrikoala  staff    102 Aug 21 12:19 testdir.test1
+Ashleys-MacBook-Pro:~ electrikoala$ cp new_file.txt
+usage: cp [-R [-H | -L | -P]] [-fi | -n] [-apvX] source_file target_file
+       cp [-R [-H | -L | -P]] [-fi | -n] [-apvX] source_file ... target_directory
+Ashleys-MacBook-Pro:~ electrikoala$ cp new_file.txt newer_file.txt
+cp: new_file.txt: No such file or directory
+Ashleys-MacBook-Pro:~ electrikoala$ cp short_file.txt newer_file.txt
+cp: short_file.txt: No such file or directory
+Ashleys-MacBook-Pro:~ electrikoala$ cat newer_file.txt
+cat: newer_file.txt: No such file or directory
+Ashleys-MacBook-Pro:~ electrikoala$ 
