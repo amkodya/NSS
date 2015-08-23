@@ -167,4 +167,129 @@ ashleymk@sandbox:/etc/apache2$ sudo a2enmod vhost_alias
 Module vhost_alias already enabled
 ashleymk@sandbox:/etc/apache2$ sudo service apache2 restart
  * Restarting web server apache2                                         [ OK ] 
-ashleymk@sandbox:/etc/apache2$ 
+ashleymk@sandbox:/etc/apache2$ cd /etc/php5
+ashleymk@sandbox:/etc/php5$ ls -la
+total 20
+drwxr-xr-x  5 root root 4096 Aug 22 19:55 .
+drwxr-xr-x 80 root root 4096 Aug 22 21:18 ..
+drwxr-xr-x  3 root root 4096 Aug 22 19:55 apache2
+drwxr-xr-x  3 root root 4096 Aug 22 19:55 cli
+drwxr-xr-x  2 root root 4096 Aug 22 19:55 mods-available
+ashleymk@sandbox:/etc/php5$ ls -la mods-available
+total 36
+drwxr-xr-x 2 root root 4096 Aug 22 19:55 .
+drwxr-xr-x 5 root root 4096 Aug 22 19:55 ..
+-rw-r--r-- 1 root root   68 Feb 18  2014 json.ini
+-rw-r--r-- 1 root root   71 Jul  2 11:56 mysqli.ini
+-rw-r--r-- 1 root root   70 Jul  2 11:56 mysql.ini
+-rw-r--r-- 1 root root   83 Jul  2 11:56 opcache.ini
+-rw-r--r-- 1 root root   66 Jul  2 11:56 pdo.ini
+-rw-r--r-- 1 root root   74 Jul  2 11:56 pdo_mysql.ini
+-rw-r--r-- 1 root root   76 Jul  2 11:56 readline.ini
+ashleymk@sandbox:/etc/php5$ ls -la apache2
+total 84
+drwxr-xr-x 3 root root  4096 Aug 22 19:55 .
+drwxr-xr-x 5 root root  4096 Aug 22 19:55 ..
+drwxr-xr-x 2 root root  4096 Aug 22 19:55 conf.d
+-rw-r--r-- 1 root root 69891 Jul  2 11:56 php.ini
+ashleymk@sandbox:/etc/php5$ ls -la apache2/conf.d
+total 8
+drwxr-xr-x 2 root root 4096 Aug 22 19:55 .
+drwxr-xr-x 3 root root 4096 Aug 22 19:55 ..
+lrwxrwxrwx 1 root root   32 Aug 22 19:55 05-opcache.ini -> ../../mods-available/opcache.ini
+lrwxrwxrwx 1 root root   28 Aug 22 19:55 10-pdo.ini -> ../../mods-available/pdo.ini
+lrwxrwxrwx 1 root root   29 Aug 22 19:55 20-json.ini -> ../../mods-available/json.ini
+lrwxrwxrwx 1 root root   31 Aug 22 19:55 20-mysqli.ini -> ../../mods-available/mysqli.ini
+lrwxrwxrwx 1 root root   30 Aug 22 19:55 20-mysql.ini -> ../../mods-available/mysql.ini
+lrwxrwxrwx 1 root root   34 Aug 22 19:55 20-pdo_mysql.ini -> ../../mods-available/pdo_mysql.ini
+lrwxrwxrwx 1 root root   33 Aug 22 19:55 20-readline.ini -> ../../mods-available/readline.ini
+ashleymk@sandbox:/etc/php5$ sudoedit /etc/php5/mods-available/custom.ini
+ashleymk@sandbox:/etc/php5$ sudo php5enmod custom
+ashleymk@sandbox:/etc/php5$ php5query -M
+pdo_mysql
+readline
+opcache
+custom
+mysqli
+mysql
+json
+pdo
+ashleymk@sandbox:/etc/php5$ sudo touch /var/log/php_errors.log
+ashleymk@sandbox:/etc/php5$ sudo chown www-data: /var/log/php_errors.log
+ashleymk@sandbox:/etc/php5$ sudo apt-get install php5-intl php5-sqlite php5-mcrtpy
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+E: Unable to locate package php5-mcrtpy
+ashleymk@sandbox:/etc/php5$ sudo php5enmod mcypt
+WARNING: Module mcypt ini file doesn't exist under /etc/php5/mods-available
+WARNING: Module mcypt ini file doesn't exist under /etc/php5/mods-available
+ashleymk@sandbox:/etc/php5$ apt-get install php5-intl php5-sqlite php5-mcrypt
+E: Could not open lock file /var/lib/dpkg/lock - open (13: Permission denied)
+E: Unable to lock the administration directory (/var/lib/dpkg/), are you root?
+ashleymk@sandbox:/etc/php5$ sudo touch /var/log/php_errors.log
+ashleymk@sandbox:/etc/php5$ sudo chown www-data: /var/log/php_errors.log
+ashleymk@sandbox:/etc/php5$ sudo apt-get install php5-intl php5-sqlite php5-mcrypt
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following extra packages will be installed:
+  libicu52 libmcrypt4
+Suggested packages:
+  libmcrypt-dev mcrypt
+The following NEW packages will be installed:
+  libicu52 libmcrypt4 php5-intl php5-mcrypt php5-sqlite
+0 upgraded, 5 newly installed, 0 to remove and 4 not upgraded.
+Need to get 6,962 kB of archives.
+After this operation, 28.8 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://us.archive.ubuntu.com/ubuntu/ trusty-updates/main libicu52 amd64 52.1-3ubuntu0.3 [6,752 kB]
+Get:2 http://us.archive.ubuntu.com/ubuntu/ trusty-updates/universe php5-intl amd64 5.5.9+dfsg-1ubuntu4.11 [109 kB]
+Get:3 http://us.archive.ubuntu.com/ubuntu/ trusty-updates/main php5-sqlite amd64 5.5.9+dfsg-1ubuntu4.11 [24.3 kB]
+Get:4 http://us.archive.ubuntu.com/ubuntu/ trusty/universe libmcrypt4 amd64 2.5.8-3.1ubuntu1 [61.9 kB]
+Get:5 http://us.archive.ubuntu.com/ubuntu/ trusty/universe php5-mcrypt amd64 5.4.6-0ubuntu5 [15.4 kB]
+Fetched 6,962 kB in 3s (1,928 kB/s)
+Selecting previously unselected package libicu52:amd64.
+(Reading database ... 76150 files and directories currently installed.)
+Preparing to unpack .../libicu52_52.1-3ubuntu0.3_amd64.deb ...
+Unpacking libicu52:amd64 (52.1-3ubuntu0.3) ...
+Selecting previously unselected package php5-intl.
+Preparing to unpack .../php5-intl_5.5.9+dfsg-1ubuntu4.11_amd64.deb ...
+Unpacking php5-intl (5.5.9+dfsg-1ubuntu4.11) ...
+Selecting previously unselected package php5-sqlite.
+Preparing to unpack .../php5-sqlite_5.5.9+dfsg-1ubuntu4.11_amd64.deb ...
+Unpacking php5-sqlite (5.5.9+dfsg-1ubuntu4.11) ...
+Selecting previously unselected package libmcrypt4.
+Preparing to unpack .../libmcrypt4_2.5.8-3.1ubuntu1_amd64.deb ...
+Unpacking libmcrypt4 (2.5.8-3.1ubuntu1) ...
+Selecting previously unselected package php5-mcrypt.
+Preparing to unpack .../php5-mcrypt_5.4.6-0ubuntu5_amd64.deb ...
+Unpacking php5-mcrypt (5.4.6-0ubuntu5) ...
+Processing triggers for libapache2-mod-php5 (5.5.9+dfsg-1ubuntu4.11) ...
+Setting up libicu52:amd64 (52.1-3ubuntu0.3) ...
+Setting up php5-intl (5.5.9+dfsg-1ubuntu4.11) ...
+
+Creating config file /etc/php5/mods-available/intl.ini with new version
+php5_invoke: Enable module intl for cli SAPI
+php5_invoke: Enable module intl for apache2 SAPI
+Setting up php5-sqlite (5.5.9+dfsg-1ubuntu4.11) ...
+
+Creating config file /etc/php5/mods-available/sqlite3.ini with new version
+php5_invoke: Enable module sqlite3 for cli SAPI
+php5_invoke: Enable module sqlite3 for apache2 SAPI
+
+Creating config file /etc/php5/mods-available/pdo_sqlite.ini with new version
+php5_invoke: Enable module pdo_sqlite for cli SAPI
+php5_invoke: Enable module pdo_sqlite for apache2 SAPI
+Setting up libmcrypt4 (2.5.8-3.1ubuntu1) ...
+Setting up php5-mcrypt (5.4.6-0ubuntu5) ...
+Processing triggers for libc-bin (2.19-0ubuntu6.6) ...
+Processing triggers for libapache2-mod-php5 (5.5.9+dfsg-1ubuntu4.11) ...
+ashleymk@sandbox:/etc/php5$ sudo php5enmod mcrypt
+ashleymk@sandbox:/etc/php5$ sudo service apache2 restart
+ * Restarting web server apache2                                              [ OK ] 
+ashleymk@sandbox:/etc/php5$ tail /var/log/php_errors.log
+[22-Aug-2015 21:46:19 America/New_York] PHP Notice:  Undefined variable: array in /media/sf_sandbox/errors.php on line 3
+[22-Aug-2015 21:46:19 America/New_York] PHP Warning:  fopen() expects at least 2 parameters, 0 given in /media/sf_sandbox/errors.php on line 5
+[22-Aug-2015 21:46:19 America/New_York] PHP Fatal error:  Call to undefined function fail() in /media/sf_sandbox/errors.php on line 7
+ashleymk@sandbox:/etc/php5$ 
