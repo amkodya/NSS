@@ -1,0 +1,740 @@
+Last login: Sat Aug 22 19:59:31 on ttys001
+Ashleys-MacBook-Pro:~ electrikoala$ sudo nano /etc/hosts
+Password:
+Sorry, try again.
+Password:
+Ashleys-MacBook-Pro:~ electrikoala$ ssh
+usage: ssh [-1246AaCfgKkMNnqsTtVvXxYy] [-b bind_address] [-c cipher_spec]
+           [-D [bind_address:]port] [-e escape_char] [-F configfile]
+           [-I pkcs11] [-i identity_file]
+           [-L [bind_address:]port:host:hostport]
+           [-l login_name] [-m mac_spec] [-O ctl_cmd] [-o option] [-p port]
+           [-R [bind_address:]port:host:hostport] [-S ctl_path]
+           [-W host:port] [-w local_tun[:remote_tun]]
+           [user@]hostname [command]
+Ashleys-MacBook-Pro:~ electrikoala$ ssh -p2222 ashleymk@sandbox.dev
+
+ashleymk@sandbox.dev's password: 
+Permission denied, please try again.
+ashleymk@sandbox.dev's password: 
+Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.19.0-25-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+ashleymk@sandbox:~$ logout
+Connection to sandbox.dev closed.
+Ashleys-MacBook-Pro:~ electrikoala$ ssh-keygen -t rsa -C *user@example.com*
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/electrikoala/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /Users/electrikoala/.ssh/id_rsa.
+Your public key has been saved in /Users/electrikoala/.ssh/id_rsa.pub.
+The key fingerprint is:
+99:0d:95:2e:c2:2c:90:1f:8b:e2:b0:eb:51:e9:14:58 *user@example.com*
+The key's randomart image is:
++--[ RSA 2048]----+
+|   E      ..     |
+|  = .    ..      |
+| . = =  ..       |
+|o . * + .=.      |
+|oo + . .S..      |
+|..+              |
+| o .             |
+|. .              |
+|..               |
++-----------------+
+Ashleys-MacBook-Pro:~ electrikoala$ ssh -p2222 ashleymk@sandbox.dev mkdir -p .ssh
+
+^[[B^[[B^[[B^[[A^[[A^[[A^[[A^[[Aashleymk@sandbox.dev's password: 
+Permission denied, please try again.
+ashleymk@sandbox.dev's password: 
+Permission denied, please try again.
+ashleymk@sandbox.dev's password: 
+Ashleys-MacBook-Pro:~ electrikoala$ cat ~/.ssh/id_rsa.pub | ssh -p2222 ashleymk@sandbox.dev 'cat >> .ssh/authorized_keys'
+
+
+
+^[[D^[[A^[[Aashleymk@sandbox.dev's password: 
+Permission denied, please try again.
+ashleymk@sandbox.dev's password: 
+Ashleys-MacBook-Pro:~ electrikoala$ ssh -p2222 ashleymk@sandbox.dev
+
+
+
+
+                
+
+
+^[[C^[[C^[[C^[[C^[[C^[Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.19.0-25-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+Last login: Sat Aug 22 20:10:22 2015 from 10.0.2.2
+
+
+
+
+ 
+
+
+^[[C^[[C^[[C^[[C^[[C^[ashleymk@sandbox:~$ 
+ashleymk@sandbox:~$ 
+ashleymk@sandbox:~$ 
+ashleymk@sandbox:~$ 
+ashleymk@sandbox:~$  
+ashleymk@sandbox:~$ 
+ashleymk@sandbox:~$ 
+ashleymk@sandbox:~$ logout
+Connection to sandbox.dev closed.
+Ashleys-MacBook-Pro:~ electrikoala$ nano ~/.ssh/config
+Ashleys-MacBook-Pro:~ electrikoala$ ssh sandbox.dev
+^[[D^[[D^[[D^[[DWelcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.19.0-25-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+Last login: Sat Aug 22 20:15:30 2015 from 10.0.2.2
+^[[D^[[D^[[D^[[Dashleymk@sandbox:~$ pwd
+/home/ashleymk
+ashleymk@sandbox:~$ ls
+ashleymk@sandbox:~$ ls -a
+.  ..  .bash_history  .bash_logout  .bashrc  .cache  .profile  .ssh
+ashleymk@sandbox:~$ ls -la
+total 32
+drwxr-xr-x 4 ashleymk ashleymk 4096 Aug 22 20:12 .
+drwxr-xr-x 3 root     root     4096 Aug 22 19:56 ..
+-rw------- 1 ashleymk ashleymk    7 Aug 22 20:10 .bash_history
+-rw-r--r-- 1 ashleymk ashleymk  220 Aug 22 19:56 .bash_logout
+-rw-r--r-- 1 ashleymk ashleymk 3637 Aug 22 19:56 .bashrc
+drwx------ 2 ashleymk ashleymk 4096 Aug 22 20:10 .cache
+-rw-r--r-- 1 ashleymk ashleymk  675 Aug 22 19:56 .profile
+drwxrwxr-x 2 ashleymk ashleymk 4096 Aug 22 20:14 .ssh
+ashleymk@sandbox:~$ ls -la .ssh
+total 12
+drwxrwxr-x 2 ashleymk ashleymk 4096 Aug 22 20:14 .
+drwxr-xr-x 4 ashleymk ashleymk 4096 Aug 22 20:12 ..
+-rw-rw-r-- 1 ashleymk ashleymk  400 Aug 22 20:14 authorized_keys
+ashleymk@sandbox:~$ cd ..
+ashleymk@sandbox:/home$ ls -la
+total 12
+drwxr-xr-x  3 root     root     4096 Aug 22 19:56 .
+drwxr-xr-x 22 root     root     4096 Aug 22 19:53 ..
+drwxr-xr-x  4 ashleymk ashleymk 4096 Aug 22 20:12 ashleymk
+ashleymk@sandbox:/home$ cd /tmp
+ashleymk@sandbox:/tmp$ ls -la
+total 8
+drwxrwxrwt  2 root root 4096 Aug 22 20:17 .
+drwxr-xr-x 22 root root 4096 Aug 22 19:53 ..
+ashleymk@sandbox:/tmp$ cd /var/log
+ashleymk@sandbox:/var/log$ ls -la
+total 772
+drwxrwxr-x  9 root   syslog   4096 Aug 22 19:56 .
+drwxr-xr-x 12 root   root     4096 Aug 22 19:55 ..
+-rw-r--r--  1 root   root    12621 Aug 22 19:55 alternatives.log
+drwxr-x---  2 root   adm      4096 Aug 22 19:55 apache2
+drwxr-xr-x  2 root   root     4096 Aug 22 19:52 apt
+-rw-r-----  1 syslog adm      3628 Aug 22 20:17 auth.log
+-rw-r--r--  1 root   root     2702 Aug 22 19:56 boot.log
+-rw-r--r--  1 root   root    61499 Aug  5 01:12 bootstrap.log
+-rw-rw----  1 root   utmp     2304 Aug 22 20:14 btmp
+-rw-r-----  1 root   adm     28044 Aug 22 19:56 dmesg
+-rw-r-----  1 root   adm        31 Aug  5 01:12 dmesg.0
+-rw-r--r--  1 root   root   315340 Aug 22 19:55 dpkg.log
+-rw-r--r--  1 root   root    32032 Aug 22 19:56 faillog
+drwxr-xr-x  2 root   root     4096 Aug 22 19:52 fsck
+drwxr-xr-x  3 root   root     4096 Aug 22 19:56 installer
+-rw-r-----  1 syslog adm     41395 Aug 22 19:56 kern.log
+-rw-rw-r--  1 root   utmp   292292 Aug 22 20:17 lastlog
+drwxr-s---  2 mysql  adm      4096 Aug 22 19:55 mysql
+-rw-r-----  1 mysql  adm         0 Aug 22 19:55 mysql.err
+-rw-r-----  1 mysql  adm         0 Aug 22 19:55 mysql.log
+-rw-r-----  1 syslog adm     48631 Aug 22 20:17 syslog
+-rw-r--r--  1 root   root   156250 Aug 22 19:56 udev
+drwxr-xr-x  2 root   root     4096 Jun 22 09:40 unattended-upgrades
+drwxr-xr-x  2 root   root     4096 Aug 22 19:57 upstart
+-rw-rw-r--  1 root   utmp     4992 Aug 22 20:17 wtmp
+ashleymk@sandbox:/var/log$ cat dmesg
+[    0.000000] Initializing cgroup subsys cpuset
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 3.19.0-25-generic (buildd@lgw01-20) (gcc version 4.8.2 (Ubuntu 4.8.2-19ubuntu1) ) #26~14.04.1-Ubuntu SMP Fri Jul 24 21:16:20 UTC 2015 (Ubuntu 3.19.0-25.26~14.04.1-generic 3.19.8-ckt2)
+[    0.000000] Command line: BOOT_IMAGE=/boot/vmlinuz-3.19.0-25-generic root=UUID=af45f44b-616a-4081-a4ec-bd0204b7ca56 ro
+[    0.000000] KERNEL supported cpus:
+[    0.000000]   Intel GenuineIntel
+[    0.000000]   AMD AuthenticAMD
+[    0.000000]   Centaur CentaurHauls
+[    0.000000] e820: BIOS-provided physical RAM map:
+[    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+[    0.000000] BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000000100000-0x000000003ffeffff] usable
+[    0.000000] BIOS-e820: [mem 0x000000003fff0000-0x000000003fffffff] ACPI data
+[    0.000000] BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+[    0.000000] NX (Execute Disable) protection: active
+[    0.000000] SMBIOS 2.5 present.
+[    0.000000] DMI: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[    0.000000] Hypervisor detected: KVM
+[    0.000000] e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+[    0.000000] e820: remove [mem 0x000a0000-0x000fffff] usable
+[    0.000000] AGP: No AGP bridge found
+[    0.000000] e820: last_pfn = 0x3fff0 max_arch_pfn = 0x400000000
+[    0.000000] MTRR default type: uncachable
+[    0.000000] MTRR variable ranges disabled:
+[    0.000000] PAT configuration [0-7]: WB  WC  UC- UC  WB  WC  UC- UC  
+[    0.000000] CPU MTRRs all blank - virtualized system.
+[    0.000000] found SMP MP-table at [mem 0x0009fff0-0x0009ffff] mapped at [ffff88000009fff0]
+[    0.000000] Scanning 1 areas for low memory corruption
+[    0.000000] Base memory trampoline at [ffff880000099000] 99000 size 24576
+[    0.000000] init_memory_mapping: [mem 0x00000000-0x000fffff]
+[    0.000000]  [mem 0x00000000-0x000fffff] page 4k
+[    0.000000] BRK [0x01fd4000, 0x01fd4fff] PGTABLE
+[    0.000000] BRK [0x01fd5000, 0x01fd5fff] PGTABLE
+[    0.000000] BRK [0x01fd6000, 0x01fd6fff] PGTABLE
+[    0.000000] init_memory_mapping: [mem 0x3fc00000-0x3fdfffff]
+[    0.000000]  [mem 0x3fc00000-0x3fdfffff] page 2M
+[    0.000000] init_memory_mapping: [mem 0x20000000-0x3fbfffff]
+[    0.000000]  [mem 0x20000000-0x3fbfffff] page 2M
+[    0.000000] init_memory_mapping: [mem 0x00100000-0x1fffffff]
+[    0.000000]  [mem 0x00100000-0x001fffff] page 4k
+[    0.000000]  [mem 0x00200000-0x1fffffff] page 2M
+[    0.000000] init_memory_mapping: [mem 0x3fe00000-0x3ffeffff]
+[    0.000000]  [mem 0x3fe00000-0x3ffeffff] page 4k
+[    0.000000] BRK [0x01fd7000, 0x01fd7fff] PGTABLE
+[    0.000000] RAMDISK: [mem 0x374d8000-0x37a63fff]
+[    0.000000] ACPI: Early table checksum verification disabled
+[    0.000000] ACPI: RSDP 0x00000000000E0000 000024 (v02 VBOX  )
+[    0.000000] ACPI: XSDT 0x000000003FFF0030 00003C (v01 VBOX   VBOXXSDT 00000001 ASL  00000061)
+[    0.000000] ACPI: FACP 0x000000003FFF00F0 0000F4 (v04 VBOX   VBOXFACP 00000001 ASL  00000061)
+[    0.000000] ACPI: DSDT 0x000000003FFF0470 001BF1 (v01 VBOX   VBOXBIOS 00000002 INTL 20100528)
+[    0.000000] ACPI: FACS 0x000000003FFF0200 000040
+[    0.000000] ACPI: APIC 0x000000003FFF0240 00005C (v02 VBOX   VBOXAPIC 00000001 ASL  00000061)
+[    0.000000] ACPI: SSDT 0x000000003FFF02A0 0001CC (v01 VBOX   VBOXCPUT 00000002 INTL 20100528)
+[    0.000000] ACPI: Local APIC address 0xfee00000
+[    0.000000] No NUMA configuration found
+[    0.000000] Faking a node at [mem 0x0000000000000000-0x000000003ffeffff]
+[    0.000000] NODE_DATA(0) allocated [mem 0x3ffeb000-0x3ffeffff]
+[    0.000000] kvm-clock: Using msrs 4b564d01 and 4b564d00
+[    0.000000] kvm-clock: cpu 0, msr 0:3ffe7001, primary cpu clock
+[    0.000000]  [ffffea0000000000-ffffea0000ffffff] PMD -> [ffff88003e600000-ffff88003f5fffff] on node 0
+[    0.000000] Zone ranges:
+[    0.000000]   DMA      [mem 0x00001000-0x00ffffff]
+[    0.000000]   DMA32    [mem 0x01000000-0x3ffeffff]
+[    0.000000]   Normal   empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x00001000-0x0009efff]
+[    0.000000]   node   0: [mem 0x00100000-0x3ffeffff]
+[    0.000000] Initmem setup node 0 [mem 0x00001000-0x3ffeffff]
+[    0.000000] On node 0 totalpages: 262030
+[    0.000000]   DMA zone: 64 pages used for memmap
+[    0.000000]   DMA zone: 21 pages reserved
+[    0.000000]   DMA zone: 3998 pages, LIFO batch:0
+[    0.000000]   DMA32 zone: 4032 pages used for memmap
+[    0.000000]   DMA32 zone: 258032 pages, LIFO batch:31
+[    0.000000] ACPI: PM-Timer IO Port: 0x4008
+[    0.000000] ACPI: Local APIC address 0xfee00000
+[    0.000000] ACPI: LAPIC (acpi_id[0x00] lapic_id[0x00] enabled)
+[    0.000000] ACPI: LAPIC (acpi_id[0x01] lapic_id[0x01] enabled)
+[    0.000000] ACPI: IOAPIC (id[0x02] address[0xfec00000] gsi_base[0])
+[    0.000000] IOAPIC[0]: apic_id 2, version 17, address 0xfec00000, GSI 0-23
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high level)
+[    0.000000] ACPI: IRQ0 used by override.
+[    0.000000] ACPI: IRQ9 used by override.
+[    0.000000] Using ACPI (MADT) for SMP configuration information
+[    0.000000] smpboot: Allowing 2 CPUs, 0 hotplug CPUs
+[    0.000000] PM: Registered nosave memory: [mem 0x00000000-0x00000fff]
+[    0.000000] PM: Registered nosave memory: [mem 0x0009f000-0x0009ffff]
+[    0.000000] PM: Registered nosave memory: [mem 0x000a0000-0x000effff]
+[    0.000000] PM: Registered nosave memory: [mem 0x000f0000-0x000fffff]
+[    0.000000] e820: [mem 0x40000000-0xfffbffff] available for PCI devices
+[    0.000000] Booting paravirtualized kernel on KVM
+[    0.000000] setup_percpu: NR_CPUS:256 nr_cpumask_bits:256 nr_cpu_ids:2 nr_node_ids:1
+[    0.000000] PERCPU: Embedded 31 pages/cpu @ffff88003fc00000 s86144 r8192 d32640 u1048576
+[    0.000000] pcpu-alloc: s86144 r8192 d32640 u1048576 alloc=1*2097152
+[    0.000000] pcpu-alloc: [0] 0 1 
+[    0.000000] Built 1 zonelists in Node order, mobility grouping on.  Total pages: 257913
+[    0.000000] Policy zone: DMA32
+[    0.000000] Kernel command line: BOOT_IMAGE=/boot/vmlinuz-3.19.0-25-generic root=UUID=af45f44b-616a-4081-a4ec-bd0204b7ca56 ro
+[    0.000000] PID hash table entries: 4096 (order: 3, 32768 bytes)
+[    0.000000] xsave: enabled xstate_bv 0x7, cntxt size 0x340 using standard form
+[    0.000000] AGP: Checking aperture...
+[    0.000000] AGP: No AGP bridge found
+[    0.000000] Calgary: detecting Calgary via BIOS EBDA area
+[    0.000000] Calgary: Unable to locate Rio Grande table in EBDA - bailing!
+[    0.000000] Memory: 1009204K/1048120K available (7918K kernel code, 1172K rwdata, 3752K rodata, 1408K init, 1292K bss, 38916K reserved, 0K cma-reserved)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+[    0.000000] Hierarchical RCU implementation.
+[    0.000000] 	RCU dyntick-idle grace-period acceleration is enabled.
+[    0.000000] 	RCU restricting CPUs from NR_CPUS=256 to nr_cpu_ids=2.
+[    0.000000] RCU: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=2
+[    0.000000] NR_IRQS:16640 nr_irqs:440 16
+[    0.000000] 	Offload RCU callbacks from all CPUs
+[    0.000000] 	Offload RCU callbacks from CPUs: 0-1.
+[    0.000000] Console: colour dummy device 80x25
+[    0.000000] console [tty0] enabled
+[    0.000000] tsc: Detected 2294.688 MHz processor
+[  542.716942] Calibrating delay loop (skipped) preset value.. 4589.37 BogoMIPS (lpj=9178752)
+[  542.716946] pid_max: default: 32768 minimum: 301
+[  542.716950] ACPI: Core revision 20141107
+[  542.717565] ACPI: All ACPI Tables successfully acquired
+[  542.717609] Security Framework initialized
+[  542.717620] AppArmor: AppArmor initialized
+[  542.717621] Yama: becoming mindful.
+[  542.717685] Dentry cache hash table entries: 131072 (order: 8, 1048576 bytes)
+[  542.717813] Inode-cache hash table entries: 65536 (order: 7, 524288 bytes)
+[  542.718085] Mount-cache hash table entries: 2048 (order: 2, 16384 bytes)
+[  542.718088] Mountpoint-cache hash table entries: 2048 (order: 2, 16384 bytes)
+[  542.718206] Initializing cgroup subsys memory
+[  542.718210] Initializing cgroup subsys devices
+[  542.718212] Initializing cgroup subsys freezer
+[  542.718214] Initializing cgroup subsys net_cls
+[  542.718216] Initializing cgroup subsys blkio
+[  542.718218] Initializing cgroup subsys perf_event
+[  542.718220] Initializing cgroup subsys net_prio
+[  542.718221] Initializing cgroup subsys hugetlb
+[  542.718286] CPU: Physical Processor ID: 0
+[  542.718287] CPU: Processor Core ID: 0
+[  542.719074] mce: CPU supports 0 MCE banks
+[  542.719095] Last level iTLB entries: 4KB 1024, 2MB 1024, 4MB 1024
+[  542.719095] Last level dTLB entries: 4KB 1024, 2MB 1024, 4MB 1024, 1GB 4
+[  542.719384] Freeing SMP alternatives memory: 32K (ffffffff81e87000 - ffffffff81e8f000)
+[  542.724004] ftrace: allocating 29988 entries in 118 pages
+[  542.764969] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+[  542.764974] smpboot: CPU0: Intel(R) Core(TM) i7-4850HQ CPU @ 2.30GHz (fam: 06, model: 46, stepping: 01)
+[  542.868480] Performance Events: unsupported p6 CPU model 70 no PMU driver, software events only.
+[  542.875495] KVM setup paravirtual spinlock
+[  542.876084] NMI watchdog: disabled (cpu0): hardware events not enabled
+[  542.876155] x86: Booting SMP configuration:
+[  542.876157] .... node  #0, CPUs:      #1
+[  542.887258] kvm-clock: cpu 1, msr 0:3ffe7041, secondary cpu clock
+[  542.888308] mce: CPU supports 0 MCE banks
+[  542.890482] x86: Booted up 1 node, 2 CPUs
+[  542.890489] smpboot: Total of 2 processors activated (9178.75 BogoMIPS)
+[  542.891261] devtmpfs: initialized
+[  542.893356] evm: security.selinux
+[  542.893358] evm: security.SMACK64
+[  542.893359] evm: security.SMACK64EXEC
+[  542.893360] evm: security.SMACK64TRANSMUTE
+[  542.893362] evm: security.SMACK64MMAP
+[  542.893363] evm: security.ima
+[  542.893364] evm: security.capability
+[  542.893629] pinctrl core: initialized pinctrl subsystem
+[  542.893730] RTC time: 23:56:43, date: 08/22/15
+[  542.893907] NET: Registered protocol family 16
+[  542.896543] cpuidle: using governor ladder
+[  542.901068] cpuidle: using governor menu
+[  542.901106] ACPI: bus type PCI registered
+[  542.901108] acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+[  542.901415] PCI: Using configuration type 1 for base access
+[  542.906342] ACPI: Added _OSI(Module Device)
+[  542.906346] ACPI: Added _OSI(Processor Device)
+[  542.906348] ACPI: Added _OSI(3.0 _SCP Extensions)
+[  542.906350] ACPI: Added _OSI(Processor Aggregator Device)
+[  542.907040] ACPI: Executed 1 blocks of module-level executable AML code
+[  542.908977] ACPI: Interpreter enabled
+[  542.908986] ACPI Exception: AE_NOT_FOUND, While evaluating Sleep State [\_S1_] (20141107/hwxface-580)
+[  542.908993] ACPI Exception: AE_NOT_FOUND, While evaluating Sleep State [\_S2_] (20141107/hwxface-580)
+[  542.909000] ACPI Exception: AE_NOT_FOUND, While evaluating Sleep State [\_S3_] (20141107/hwxface-580)
+[  542.909007] ACPI Exception: AE_NOT_FOUND, While evaluating Sleep State [\_S4_] (20141107/hwxface-580)
+[  542.909017] ACPI: (supports S0 S5)
+[  542.909020] ACPI: Using IOAPIC for interrupt routing
+[  542.909260] PCI: Ignoring host bridge windows from ACPI; if necessary, use "pci=use_crs" and report a bug
+[  542.912129] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+[  542.912142] acpi PNP0A03:00: _OSC: OS supports [ASPM ClockPM Segments MSI]
+[  542.912148] acpi PNP0A03:00: _OSC failed (AE_NOT_FOUND); disabling ASPM
+[  542.912214] acpi PNP0A03:00: host bridge window [io  0x0000-0x0cf7] (ignored)
+[  542.912215] acpi PNP0A03:00: host bridge window [io  0x0d00-0xffff] (ignored)
+[  542.912226] acpi PNP0A03:00: host bridge window [mem 0x000a0000-0x000bffff] (ignored)
+[  542.912228] acpi PNP0A03:00: host bridge window [mem 0x40000000-0xffdfffff] (ignored)
+[  542.912230] PCI: root bus 00: using default resources
+[  542.912231] acpi PNP0A03:00: fail to add MMCONFIG information, can't access extended PCI configuration space under this bridge.
+[  542.912416] PCI host bridge to bus 0000:00
+[  542.912419] pci_bus 0000:00: root bus resource [bus 00-ff]
+[  542.912421] pci_bus 0000:00: root bus resource [io  0x0000-0xffff]
+[  542.912423] pci_bus 0000:00: root bus resource [mem 0x00000000-0x7fffffffff]
+[  542.912458] pci 0000:00:00.0: [8086:1237] type 00 class 0x060000
+[  542.912932] pci 0000:00:01.0: [8086:7000] type 00 class 0x060100
+[  542.913410] pci 0000:00:01.1: [8086:7111] type 00 class 0x01018a
+[  542.913720] pci 0000:00:01.1: reg 0x20: [io  0xd000-0xd00f]
+[  542.913891] pci 0000:00:01.1: legacy IDE quirk: reg 0x10: [io  0x01f0-0x01f7]
+[  542.913894] pci 0000:00:01.1: legacy IDE quirk: reg 0x14: [io  0x03f6]
+[  542.913896] pci 0000:00:01.1: legacy IDE quirk: reg 0x18: [io  0x0170-0x0177]
+[  542.913897] pci 0000:00:01.1: legacy IDE quirk: reg 0x1c: [io  0x0376]
+[  542.914109] pci 0000:00:02.0: [80ee:beef] type 00 class 0x030000
+[  542.914993] pci 0000:00:02.0: reg 0x10: [mem 0xe0000000-0xe0ffffff pref]
+[  542.918826] pci 0000:00:03.0: [8086:100e] type 00 class 0x020000
+[  542.919238] pci 0000:00:03.0: reg 0x10: [mem 0xf0000000-0xf001ffff]
+[  542.919901] pci 0000:00:03.0: reg 0x18: [io  0xd010-0xd017]
+[  542.921755] pci 0000:00:04.0: [80ee:cafe] type 00 class 0x088000
+[  542.922171] pci 0000:00:04.0: reg 0x10: [io  0xd020-0xd03f]
+[  542.922535] pci 0000:00:04.0: reg 0x14: [mem 0xf0400000-0xf07fffff]
+[  542.922893] pci 0000:00:04.0: reg 0x18: [mem 0xf0800000-0xf0803fff pref]
+[  542.924519] pci 0000:00:05.0: [8086:2415] type 00 class 0x040100
+[  542.924621] pci 0000:00:05.0: reg 0x10: [io  0xd100-0xd1ff]
+[  542.924689] pci 0000:00:05.0: reg 0x14: [io  0xd200-0xd23f]
+[  542.925164] pci 0000:00:06.0: [106b:003f] type 00 class 0x0c0310
+[  542.925603] pci 0000:00:06.0: reg 0x10: [mem 0xf0804000-0xf0804fff]
+[  542.927809] pci 0000:00:07.0: [8086:7113] type 00 class 0x068000
+[  542.928373] pci 0000:00:0d.0: [8086:2829] type 00 class 0x010601
+[  542.928892] pci 0000:00:0d.0: reg 0x10: [io  0xd240-0xd247]
+[  542.929651] pci 0000:00:0d.0: reg 0x18: [io  0xd250-0xd257]
+[  542.930379] pci 0000:00:0d.0: reg 0x20: [io  0xd260-0xd26f]
+[  542.930736] pci 0000:00:0d.0: reg 0x24: [mem 0xf0806000-0xf0807fff]
+[  542.932292] ACPI: PCI Interrupt Link [LNKA] (IRQs 5 9 10 *11)
+[  542.932446] ACPI: PCI Interrupt Link [LNKB] (IRQs 5 9 10 *11)
+[  542.932505] ACPI: PCI Interrupt Link [LNKC] (IRQs 5 9 *10 11)
+[  542.932563] ACPI: PCI Interrupt Link [LNKD] (IRQs 5 *9 10 11)
+[  542.932660] ACPI: Enabled 2 GPEs in block 00 to 07
+[  542.932974] vgaarb: setting as boot device: PCI:0000:00:02.0
+[  542.932977] vgaarb: device added: PCI:0000:00:02.0,decodes=io+mem,owns=io+mem,locks=none
+[  542.932980] vgaarb: loaded
+[  542.932982] vgaarb: bridge control possible 0000:00:02.0
+[  542.933178] SCSI subsystem initialized
+[  542.933313] libata version 3.00 loaded.
+[  542.933343] ACPI: bus type USB registered
+[  542.933366] usbcore: registered new interface driver usbfs
+[  542.933373] usbcore: registered new interface driver hub
+[  542.933392] usbcore: registered new device driver usb
+[  542.933651] PCI: Using ACPI for IRQ routing
+[  542.933655] PCI: pci_cache_line_size set to 64 bytes
+[  542.933795] e820: reserve RAM buffer [mem 0x0009fc00-0x0009ffff]
+[  542.933799] e820: reserve RAM buffer [mem 0x3fff0000-0x3fffffff]
+[  542.933937] NetLabel: Initializing
+[  542.933939] NetLabel:  domain hash size = 128
+[  542.933941] NetLabel:  protocols = UNLABELED CIPSOv4
+[  542.933961] NetLabel:  unlabeled traffic allowed by default
+[  542.934215] Switched to clocksource kvm-clock
+[  542.939097] AppArmor: AppArmor Filesystem Enabled
+[  542.939153] pnp: PnP ACPI init
+[  542.939224] pnp 00:00: Plug and Play ACPI device, IDs PNP0303 (active)
+[  542.939289] pnp 00:01: Plug and Play ACPI device, IDs PNP0f03 (active)
+[  542.939320] pnp 00:02: Plug and Play ACPI device, IDs PNP0400 (active)
+[  542.939839] pnp: PnP ACPI: found 3 devices
+[  542.951710] pci_bus 0000:00: resource 4 [io  0x0000-0xffff]
+[  542.951712] pci_bus 0000:00: resource 5 [mem 0x00000000-0x7fffffffff]
+[  542.951733] NET: Registered protocol family 2
+[  542.951857] TCP established hash table entries: 8192 (order: 4, 65536 bytes)
+[  542.951874] TCP bind hash table entries: 8192 (order: 5, 131072 bytes)
+[  542.951896] TCP: Hash tables configured (established 8192 bind 8192)
+[  542.951941] TCP: reno registered
+[  542.951955] UDP hash table entries: 512 (order: 2, 16384 bytes)
+[  542.951959] UDP-Lite hash table entries: 512 (order: 2, 16384 bytes)
+[  542.951987] NET: Registered protocol family 1
+[  542.952000] pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+[  542.952082] pci 0000:00:01.0: Activating ISA DMA hang workarounds
+[  542.952123] pci 0000:00:02.0: Video device with shadowed ROM
+[  542.953085] PCI: CLS 0 bytes, default 64
+[  542.953137] Trying to unpack rootfs image as initramfs...
+[  543.026694] Freeing initrd memory: 5680K (ffff8800374d8000 - ffff880037a64000)
+[  543.026853] platform rtc_cmos: registered platform RTC device (no PNP device found)
+[  543.027322] microcode: CPU0 sig=0x40661, pf=0x2, revision=0x19
+[  543.027333] microcode: CPU1 sig=0x40661, pf=0x2, revision=0x19
+[  543.027368] microcode: Microcode Update Driver: v2.00 <tigran@aivazian.fsnet.co.uk>, Peter Oruba
+[  543.027396] Scanning for low memory corruption every 60 seconds
+[  543.027737] futex hash table entries: 512 (order: 3, 32768 bytes)
+[  543.027747] Initialise system trusted keyring
+[  543.027767] audit: initializing netlink subsys (disabled)
+[  543.027781] audit: type=2000 audit(1440288346.536:1): initialized
+[  543.028119] HugeTLB registered 2 MB page size, pre-allocated 0 pages
+[  543.029284] zpool: loaded
+[  543.029288] zbud: loaded
+[  543.029549] VFS: Disk quotas dquot_6.5.2
+[  543.029580] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[  543.030009] fuse init (API version 7.23)
+[  543.030110] Key type big_key registered
+[  543.031676] Key type asymmetric registered
+[  543.031684] Asymmetric key parser 'x509' registered
+[  543.031718] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 252)
+[  543.031811] io scheduler noop registered
+[  543.031815] io scheduler deadline registered (default)
+[  543.031851] io scheduler cfq registered
+[  543.031910] pci_hotplug: PCI Hot Plug PCI Core version: 0.5
+[  543.031920] pciehp: PCI Express Hot Plug Controller Driver version: 0.4
+[  543.031942] vesafb: mode is 640x480x32, linelength=2560, pages=0
+[  543.031944] vesafb: scrolling: redraw
+[  543.031945] vesafb: Truecolor: size=8:8:8:8, shift=24:16:8:0
+[  543.031950] mtrr: your processor doesn't support write-combining
+[  543.031958] vesafb: framebuffer at 0xe0000000, mapped to 0xffffc90000200000, using 1216k, total 1216k
+[  543.033157] Console: switching to colour frame buffer device 80x30
+[  543.033653] fb0: VESA VGA frame buffer device
+[  543.033678] intel_idle: does not run on family 6 model 70
+[  543.034071] ACPI: AC Adapter [AC] (on-line)
+[  543.034484] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+[  543.034566] ACPI: Power Button [PWRF]
+[  543.035506] input: Sleep Button as /devices/LNXSYSTM:00/LNXSLPBN:00/input/input1
+[  543.036170] ACPI: Sleep Button [SLPF]
+[  543.036826] GHES: HEST is not enabled!
+[  543.038310] ACPI: Battery Slot [BAT0] (battery present)
+[  543.038735] Serial: 8250/16550 driver, 32 ports, IRQ sharing enabled
+[  543.044230] Linux agpgart interface v0.103
+[  543.047529] brd: module loaded
+[  543.049453] loop: module loaded
+[  543.049874] ata_piix 0000:00:01.1: version 2.13
+[  543.050397] scsi host0: ata_piix
+[  543.051106] scsi host1: ata_piix
+[  543.051446] ata1: PATA max UDMA/33 cmd 0x1f0 ctl 0x3f6 bmdma 0xd000 irq 14
+[  543.051778] ata2: PATA max UDMA/33 cmd 0x170 ctl 0x376 bmdma 0xd008 irq 15
+[  543.052161] libphy: Fixed MDIO Bus: probed
+[  543.052511] tun: Universal TUN/TAP device driver, 1.6
+[  543.052819] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[  543.053383] PPP generic driver version 2.4.2
+[  543.053949] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[  543.054930] ehci-pci: EHCI PCI platform driver
+[  543.055288] ehci-platform: EHCI generic platform driver
+[  543.055609] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[  543.055928] ohci-pci: OHCI PCI platform driver
+[  543.056719] ohci-pci 0000:00:06.0: OHCI PCI host controller
+[  543.057030] ohci-pci 0000:00:06.0: new USB bus registered, assigned bus number 1
+[  543.057740] ohci-pci 0000:00:06.0: irq 22, io mem 0xf0804000
+[  543.110753] usb usb1: New USB device found, idVendor=1d6b, idProduct=0001
+[  543.111923] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[  543.112688] usb usb1: Product: OHCI PCI host controller
+[  543.113046] usb usb1: Manufacturer: Linux 3.19.0-25-generic ohci_hcd
+[  543.113401] usb usb1: SerialNumber: 0000:00:06.0
+[  543.114021] hub 1-0:1.0: USB hub found
+[  543.114347] hub 1-0:1.0: 12 ports detected
+[  543.115073] ohci-platform: OHCI generic platform driver
+[  543.115413] uhci_hcd: USB Universal Host Controller Interface driver
+[  543.115793] i8042: PNP: PS/2 Controller [PNP0303:PS2K,PNP0f03:PS2M] at 0x60,0x64 irq 1,12
+[  543.116917] serio: i8042 KBD port at 0x60,0x64 irq 1
+[  543.117258] serio: i8042 AUX port at 0x60,0x64 irq 12
+[  543.117636] mousedev: PS/2 mouse device common for all mice
+[  543.118219] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input2
+[  543.119399] rtc_cmos rtc_cmos: rtc core: registered rtc_cmos as rtc0
+[  543.119825] rtc_cmos rtc_cmos: alarms up to one day, 114 bytes nvram
+[  543.120232] i2c /dev entries driver
+[  543.120692] device-mapper: uevent: version 1.0.3
+[  543.121260] device-mapper: ioctl: 4.29.0-ioctl (2014-10-28) initialised: dm-devel@redhat.com
+[  543.122619] ledtrig-cpu: registered to indicate activity on CPUs
+[  543.123476] PCCT header not found.
+[  543.123856] ACPI PCC probe failed.
+[  543.124332] TCP: cubic registered
+[  543.124742] NET: Registered protocol family 10
+[  543.125411] NET: Registered protocol family 17
+[  543.125694] Key type dns_resolver registered
+[  543.126985] Loading compiled-in X.509 certificates
+[  543.127895] Loaded X.509 cert 'Magrathea: Glacier signing key: 6aaa11d18c2d3a40b1b4dbe5bf8ad656ddf51838'
+[  543.128584] registered taskstats version 1
+[  543.131064] Key type trusted registered
+[  543.134932] Key type encrypted registered
+[  543.135236] AppArmor: AppArmor sha1 policy hashing enabled
+[  543.135551] ima: No TPM chip found, activating TPM-bypass!
+[  543.135874] evm: HMAC attrs: 0x1
+[  543.136539]   Magic number: 11:996:959
+[  543.136961] rtc_cmos rtc_cmos: setting system clock to 2015-08-22 23:56:44 UTC (1440287804)
+[  543.137768] BIOS EDD facility v0.16 2004-Jun-25, 0 devices found
+[  543.138165] EDD information not available.
+[  543.138553] PM: Hibernation image not present or could not be loaded.
+[  543.207210] ata1.00: ATAPI: VBOX CD-ROM, 1.0, max UDMA/133
+[  543.208908] ata1.00: configured for UDMA/33
+[  543.209968] scsi 0:0:0:0: CD-ROM            VBOX     CD-ROM           1.0  PQ: 0 ANSI: 5
+[  543.219515] sr 0:0:0:0: [sr0] scsi3-mmc drive: 32x/32x xa/form2 tray
+[  543.219980] cdrom: Uniform CD-ROM driver Revision: 3.20
+[  543.220720] sr 0:0:0:0: Attached scsi CD-ROM sr0
+[  543.221073] sr 0:0:0:0: Attached scsi generic sg0 type 5
+[  543.222360] Freeing unused kernel memory: 1408K (ffffffff81d27000 - ffffffff81e87000)
+[  543.224022] Write protecting the kernel read-only data: 12288k
+[  543.224945] Freeing unused kernel memory: 260K (ffff8800017bf000 - ffff880001800000)
+[  543.226027] Freeing unused kernel memory: 344K (ffff880001baa000 - ffff880001c00000)
+[  543.238778] systemd-udevd[109]: starting version 204
+[  543.256778] e1000: Intel(R) PRO/1000 Network Driver - version 7.3.21-k8-NAPI
+[  543.257149] e1000: Copyright (c) 1999-2006 Intel Corporation.
+[  543.475234] input: ImExPS/2 Generic Explorer Mouse as /devices/platform/i8042/serio1/input/input4
+[  543.522335] usb 1-1: new full-speed USB device number 2 using ohci-pci
+[  543.607442] e1000 0000:00:03.0 eth0: (PCI:33MHz:32-bit) 08:00:27:69:1e:05
+[  543.608524] e1000 0000:00:03.0 eth0: Intel(R) PRO/1000 Network Connection
+[  543.608945] ahci 0000:00:0d.0: version 3.0
+[  543.609425] ahci 0000:00:0d.0: SSS flag set, parallel bus scan disabled
+[  543.609919] ahci 0000:00:0d.0: AHCI 0001.0100 32 slots 1 ports 3 Gbps 0x1 impl SATA mode
+[  543.610755] ahci 0000:00:0d.0: flags: 64bit ncq stag only ccc 
+[  543.611823] scsi host2: ahci
+[  543.612276] ata3: SATA max UDMA/133 abar m8192@0xf0806000 port 0xf0806100 irq 21
+[  543.780521] usb 1-1: New USB device found, idVendor=80ee, idProduct=0021
+[  543.781967] usb 1-1: New USB device strings: Mfr=1, Product=3, SerialNumber=0
+[  543.782546] usb 1-1: Product: USB Tablet
+[  543.783115] usb 1-1: Manufacturer: VirtualBox
+[  543.930604] ata3: SATA link up 3.0 Gbps (SStatus 123 SControl 300)
+[  543.932467] ata3.00: ATA-6: VBOX HARDDISK, 1.0, max UDMA/133
+[  543.933605] ata3.00: 16777216 sectors, multi 128: LBA48 NCQ (depth 31/32)
+[  543.934460] ata3.00: configured for UDMA/133
+[  543.935099] scsi 2:0:0:0: Direct-Access     ATA      VBOX HARDDISK    1.0  PQ: 0 ANSI: 5
+[  543.936391] sd 2:0:0:0: [sda] 16777216 512-byte logical blocks: (8.58 GB/8.00 GiB)
+[  543.937361] sd 2:0:0:0: [sda] Write Protect is off
+[  543.937855] sd 2:0:0:0: [sda] Mode Sense: 00 3a 00 00
+[  543.937879] sd 2:0:0:0: Attached scsi generic sg1 type 0
+[  543.938484] sd 2:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[  543.941025]  sda: sda1 sda2 < sda5 >
+[  543.942037] sd 2:0:0:0: [sda] Attached SCSI disk
+[  544.010420] EXT4-fs (sda1): mounted filesystem with ordered data mode. Opts: (null)
+[  544.027331] tsc: Refined TSC clocksource calibration: 2295.970 MHz
+[  546.290703] floppy0: no floppy controllers found
+[  546.292118] work still pending
+[  546.373876] random: init urandom read with 37 bits of entropy available
+[  546.404106] init: plymouth-upstart-bridge main process (164) terminated with status 1
+[  546.405796] init: plymouth-upstart-bridge main process ended, respawning
+[  546.414480] init: plymouth-upstart-bridge main process (174) terminated with status 1
+[  546.415573] init: plymouth-upstart-bridge main process ended, respawning
+[  546.424110] init: plymouth-upstart-bridge main process (177) terminated with status 1
+[  546.424115] init: plymouth-upstart-bridge main process ended, respawning
+[  546.510465] Adding 1046524k swap on /dev/sda5.  Priority:-1 extents:1 across:1046524k FS
+[  546.576333] EXT4-fs (sda1): re-mounted. Opts: errors=remount-ro
+[  546.595140] systemd-udevd[290]: starting version 204
+[  546.623785] lp: driver loaded but no devices found
+[  546.731968] ACPI: Video Device [GFX0] (multi-head: yes  rom: no  post: no)
+[  546.732050] input: Video Bus as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/LNXVIDEO:00/input/input5
+[  546.741986] input: Unspecified device as /devices/pci0000:00/0000:00:04.0/input/input6
+[  546.742919] vboxguest: misc device minor 56, IRQ 20, I/O port d020, MMIO at 00000000f0400000 (size 0x400000)
+[  546.742921] vboxguest: Successfully loaded version 4.3.22_Ubuntu (interface 0x00010004)
+[  546.745796] parport_pc 00:02: reported by Plug and Play ACPI
+[  546.824696] AVX2 version of gcm_enc/dec engaged.
+[  546.824699] AES CTR mode by8 optimization enabled
+[  546.865100] ppdev: user-space parallel port driver
+[  546.902395] IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready
+[  546.903180] e1000: eth0 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+[  546.904728] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[  547.026762] init: failsafe main process (441) killed by TERM signal
+ashleymk@sandbox:/var/log$ head dmseg
+head: cannot open ‘dmseg’ for reading: No such file or directory
+ashleymk@sandbox:/var/log$ head dmesg
+[    0.000000] Initializing cgroup subsys cpuset
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 3.19.0-25-generic (buildd@lgw01-20) (gcc version 4.8.2 (Ubuntu 4.8.2-19ubuntu1) ) #26~14.04.1-Ubuntu SMP Fri Jul 24 21:16:20 UTC 2015 (Ubuntu 3.19.0-25.26~14.04.1-generic 3.19.8-ckt2)
+[    0.000000] Command line: BOOT_IMAGE=/boot/vmlinuz-3.19.0-25-generic root=UUID=af45f44b-616a-4081-a4ec-bd0204b7ca56 ro
+[    0.000000] KERNEL supported cpus:
+[    0.000000]   Intel GenuineIntel
+[    0.000000]   AMD AuthenticAMD
+[    0.000000]   Centaur CentaurHauls
+[    0.000000] e820: BIOS-provided physical RAM map:
+ashleymk@sandbox:/var/log$ less dmesg
+ashleymk@sandbox:/var/log$ find
+.
+./faillog
+./mysql.err
+./boot.log
+./fsck
+./fsck/checkfs
+./fsck/checkroot
+./wtmp
+./lastlog
+./alternatives.log
+./mysql.log
+./dmesg.0
+./kern.log
+./bootstrap.log
+./btmp
+./apt
+./apt/history.log
+./apt/term.log
+./mysql
+./mysql/error.log
+./dmesg
+./udev
+./dpkg.log
+./upstart
+./upstart/ureadahead.log
+./upstart/container-detect.log
+./upstart/procps-static-network-up.log
+./upstart/mysql.log
+./upstart/network-interface-eth0.log
+./upstart/console-setup.log
+./upstart/kmod.log
+./upstart/mountall.log
+./upstart/procps-virtual-filesystems.log
+./auth.log
+./apache2
+./apache2/error.log
+./apache2/access.log
+./apache2/other_vhosts_access.log
+./installer
+./installer/initial-status.gz
+./installer/status
+./installer/hardware-summary
+./installer/cdebconf
+./installer/cdebconf/questions.dat
+./installer/cdebconf/templates.dat
+./installer/media-info
+./installer/lsb-release
+./installer/partman
+./installer/syslog
+./unattended-upgrades
+./syslog
+ashleymk@sandbox:/var/log$ find | grep -i error
+./mysql/error.log
+./apache2/error.log
+ashleymk@sandbox:/var/log$ grep -i ashleymk auth.log
+Aug 22 20:10:14 sandbox sshd[933]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.0.2.2  user=ashleymk
+Aug 22 20:10:16 sandbox sshd[933]: Failed password for ashleymk from 10.0.2.2 port 64218 ssh2
+Aug 22 20:10:22 sandbox sshd[933]: Accepted password for ashleymk from 10.0.2.2 port 64218 ssh2
+Aug 22 20:10:22 sandbox sshd[933]: pam_unix(sshd:session): session opened for user ashleymk by (uid=0)
+Aug 22 20:10:28 sandbox sshd[933]: pam_unix(sshd:session): session closed for user ashleymk
+Aug 22 20:12:49 sandbox sshd[956]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.0.2.2  user=ashleymk
+Aug 22 20:12:52 sandbox sshd[956]: Failed password for ashleymk from 10.0.2.2 port 64257 ssh2
+Aug 22 20:12:52 sandbox sshd[956]: Failed password for ashleymk from 10.0.2.2 port 64257 ssh2
+Aug 22 20:12:56 sandbox sshd[956]: Accepted password for ashleymk from 10.0.2.2 port 64257 ssh2
+Aug 22 20:12:56 sandbox sshd[956]: pam_unix(sshd:session): session opened for user ashleymk by (uid=0)
+Aug 22 20:12:56 sandbox sshd[956]: pam_unix(sshd:session): session closed for user ashleymk
+Aug 22 20:14:37 sandbox sshd[969]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.0.2.2  user=ashleymk
+Aug 22 20:14:39 sandbox sshd[969]: Failed password for ashleymk from 10.0.2.2 port 64280 ssh2
+Aug 22 20:14:43 sandbox sshd[969]: Accepted password for ashleymk from 10.0.2.2 port 64280 ssh2
+Aug 22 20:14:43 sandbox sshd[969]: pam_unix(sshd:session): session opened for user ashleymk by (uid=0)
+Aug 22 20:14:43 sandbox sshd[969]: pam_unix(sshd:session): session closed for user ashleymk
+Aug 22 20:15:30 sandbox sshd[983]: Accepted publickey for ashleymk from 10.0.2.2 port 64299 ssh2: RSA 99:0d:95:2e:c2:2c:90:1f:8b:e2:b0:eb:51:e9:14:58
+Aug 22 20:15:30 sandbox sshd[983]: pam_unix(sshd:session): session opened for user ashleymk by (uid=0)
+Aug 22 20:15:51 sandbox sshd[983]: pam_unix(sshd:session): session closed for user ashleymk
+Aug 22 20:17:11 sandbox sshd[1006]: Accepted publickey for ashleymk from 10.0.2.2 port 64317 ssh2: RSA 99:0d:95:2e:c2:2c:90:1f:8b:e2:b0:eb:51:e9:14:58
+Aug 22 20:17:11 sandbox sshd[1006]: pam_unix(sshd:session): session opened for user ashleymk by (uid=0)
+ashleymk@sandbox:/var/log$ ls -la /etc/shadow
+-rw-r----- 1 root shadow 712 Aug 22 19:56 /etc/shadow
+ashleymk@sandbox:/var/log$ cat/shadow
+-bash: cat/shadow: No such file or directory
+ashleymk@sandbox:/var/log$ cat /etc/shadow
+cat: /etc/shadow: Permission denied
+ashleymk@sandbox:/var/log$ sudo cat /etc/shadow
+[sudo] password for ashleymk: 
+root:!:16669:0:99999:7:::
+daemon:*:16652:0:99999:7:::
+bin:*:16652:0:99999:7:::
+sys:*:16652:0:99999:7:::
+sync:*:16652:0:99999:7:::
+games:*:16652:0:99999:7:::
+man:*:16652:0:99999:7:::
+lp:*:16652:0:99999:7:::
+mail:*:16652:0:99999:7:::
+news:*:16652:0:99999:7:::
+uucp:*:16652:0:99999:7:::
+proxy:*:16652:0:99999:7:::
+www-data:*:16652:0:99999:7:::
+backup:*:16652:0:99999:7:::
+list:*:16652:0:99999:7:::
+irc:*:16652:0:99999:7:::
+gnats:*:16652:0:99999:7:::
+nobody:*:16652:0:99999:7:::
+libuuid:!:16652:0:99999:7:::
+syslog:*:16652:0:99999:7:::
+mysql:!:16669:0:99999:7:::
+sshd:*:16669:0:99999:7:::
+ashleymk:$6$7RoXww4H$HI6324SW9VSb0S0jGLzeid7jT0hEmUSWS3Nm80s8c7doM4pEKA01dlSjTM2CHNTc7UYGFODJ2F6czfvgZ3jTU1:16669:0:99999:7:::
+ashleymk@sandbox:/var/log$ logout
+Connection to sandbox.dev closed.
+Ashleys-MacBook-Pro:~ electrikoala$ ssh sandbox.dev
+Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.19.0-25-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+Last login: Sat Aug 22 20:17:11 2015 from 10.0.2.2
+ashleymk@sandbox:~$ sudo shutdown -h now
+[sudo] password for ashleymk: 
+
+Broadcast message from ashleymk@sandbox
+	(/dev/pts/0) at 20:28 ...
+
+The system is going down for halt NOW!
+ashleymk@sandbox:~$ Connection to sandbox.dev closed by remote host.
+Connection to sandbox.dev closed.
+Ashleys-MacBook-Pro:~ electrikoala$ 
