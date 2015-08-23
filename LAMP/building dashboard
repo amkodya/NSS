@@ -1,0 +1,584 @@
+Last login: Sat Aug 22 21:08:48 on ttys001
+Ashleys-MacBook-Pro:~ electrikoala$ man mount
+Ashleys-MacBook-Pro:~ electrikoala$ sudo mount /dev/cdrom /media/cdrom
+Password:
+mount: You must specify a filesystem type with -t.
+Ashleys-MacBook-Pro:~ electrikoala$ sudo mount //dev/cdrom /media/cdrom
+mount: You must specify a filesystem type with -t.
+Ashleys-MacBook-Pro:~ electrikoala$ ssh sandbox.dev
+Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.19.0-25-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+Last login: Sat Aug 22 21:11:34 2015 from 10.0.2.2
+ashleymk@sandbox:~$ man mount
+ashleymk@sandbox:~$ sudo mount /dev/cdrom /media/cdrom
+[sudo] password for ashleymk: 
+mount: block device /dev/sr0 is write-protected, mounting read-only
+ashleymk@sandbox:~$ sudo sh /media/cdrom/VboxLinkAdditions.run
+sh: 0: Can't open /media/cdrom/VboxLinkAdditions.run
+ashleymk@sandbox:~$ sudo sh /edia/cdrom/VBoxLinuxAdditions.run
+sh: 0: Can't open /edia/cdrom/VBoxLinuxAdditions.run
+ashleymk@sandbox:~$ sudo sh /media/cdrom/VBoxLinuxAdditions.run
+Verifying archive integrity... All good.
+Uncompressing VirtualBox 5.0.0 Guest Additions for Linux............
+VirtualBox Guest Additions installer
+Removing installed version 5.0.0 of VirtualBox Guest Additions...
+Stopping VirtualBox Additions ...fail!
+(Cannot unload module vboxguest)
+Removing existing VirtualBox DKMS kernel modules ...done.
+Removing existing VirtualBox non-DKMS kernel modules ...done.
+Stopping VirtualBox Guest Addition service  ...done.
+Copying additional installer modules ...
+Installing additional modules ...
+Removing existing VirtualBox DKMS kernel modules ...done.
+Removing existing VirtualBox non-DKMS kernel modules ...done.
+Building the VirtualBox Guest Additions kernel modules ...done.
+Doing non-kernel setup of the Guest Additions ...done.
+You should restart your guest to make sure the new modules are actually used
+
+Installing the Window System drivers
+Could not find the X.Org or XFree86 Window System, skipping.
+ashleymk@sandbox:~$ sudo reboot
+
+Broadcast message from ashleymk@sandbox
+	(/dev/pts/0) at 21:18 ...
+
+The system is going down for reboot NOW!
+ashleymk@sandbox:~$ Connection to sandbox.dev closed by remote host.
+Connection to sandbox.dev closed.
+Ashleys-MacBook-Pro:~ electrikoala$ ssh sandbox.dev
+Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.19.0-25-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+Last login: Sat Aug 22 21:15:26 2015 from 10.0.2.2
+ashleymk@sandbox:~$ lsmod
+Module                  Size  Used by
+vboxsf                 45056  1 
+ppdev                  20480  0 
+crct10dif_pclmul       16384  0 
+crc32_pclmul           16384  0 
+ghash_clmulni_intel    16384  0 
+aesni_intel           172032  0 
+aes_x86_64             20480  1 aesni_intel
+lrw                    16384  1 aesni_intel
+gf128mul               16384  1 lrw
+glue_helper            16384  1 aesni_intel
+ablk_helper            16384  1 aesni_intel
+cryptd                 20480  3 ghash_clmulni_intel,aesni_intel,ablk_helper
+vboxguest             278528  2 vboxsf
+serio_raw              16384  0 
+parport_pc             32768  0 
+video                  20480  0 
+lp                     20480  0 
+parport                45056  3 lp,ppdev,parport_pc
+psmouse               114688  0 
+e1000                 135168  0 
+ahci                   36864  2 
+libahci                32768  1 ahci
+ashleymk@sandbox:~$ ls -la /media
+total 12
+drwxr-xr-x  4 root root   4096 Aug 22 20:47 .
+drwxr-xr-x 22 root root   4096 Aug 22 19:53 ..
+drwxr-xr-x  2 root root   4096 Aug 22 19:52 cdrom
+drwxrwx---  1 root vboxsf   68 Aug 22 19:06 sf_sandbox
+ashleymk@sandbox:~$ cd /media/sf_sandbox
+ashleymk@sandbox:/media/sf_sandbox$ cd /etc
+ashleymk@sandbox:/etc$ ls
+acpi                    gshadow          mime.types     rmt
+adduser.conf            gshadow-         mke2fs.conf    rpc
+alternatives            host.conf        modprobe.d     rsyslog.conf
+apache2                 hostname         modules        rsyslog.d
+apparmor                hosts            mtab           securetty
+apparmor.d              hosts.allow      mysql          security
+apt                     hosts.deny       nanorc         selinux
+bash.bashrc             init             network        services
+bash_completion.d       init.d           networks       sgml
+bindresvport.blacklist  initramfs-tools  newt           shadow
+blkid.conf              inputrc          nsswitch.conf  shadow-
+blkid.tab               insserv          opt            shells
+ca-certificates         insserv.conf     os-release     skel
+ca-certificates.conf    insserv.conf.d   pam.conf       ssh
+calendar                iproute2         pam.d          ssl
+console-setup           iscsi            passwd         subgid
+cron.d                  issue            passwd-        subgid-
+cron.daily              issue.net        perl           subuid
+cron.hourly             kbd              php5           subuid-
+cron.monthly            kernel           pm             sudoers
+crontab                 kernel-img.conf  ppp            sudoers.d
+cron.weekly             ldap             profile        sysctl.conf
+dbus-1                  ld.so.cache      profile.d      sysctl.d
+debconf.conf            ld.so.conf       protocols      systemd
+debian_version          ld.so.conf.d     python         terminfo
+default                 legal            python2.7      timezone
+deluser.conf            libaudit.conf    python3        ucf.conf
+depmod.d                locale.alias     python3.4      udev
+dhcp                    localtime        rc0.d          ufw
+dkms                    logcheck         rc1.d          update-motd.d
+dpkg                    login.defs       rc2.d          upstart-xsessions
+environment             logrotate.conf   rc3.d          vim
+fstab                   logrotate.d      rc4.d          vtrgb
+fstab.d                 lsb-release      rc5.d          wgetrc
+gai.conf                magic            rc6.d          X11
+groff                   magic.mime       rc.local       xml
+group                   mailcap          rcS.d
+group-                  mailcap.order    resolvconf
+grub.d                  manpath.config   resolv.conf
+ashleymk@sandbox:/etc$ cd apache2
+ashleymk@sandbox:/etc/apache2$ ls -la
+total 88
+drwxr-xr-x  8 root root  4096 Aug 22 19:55 .
+drwxr-xr-x 80 root root  4096 Aug 22 21:18 ..
+-rw-r--r--  1 root root  7115 Jan  7  2014 apache2.conf
+drwxr-xr-x  2 root root  4096 Aug 22 19:55 conf-available
+drwxr-xr-x  2 root root  4096 Aug 22 19:55 conf-enabled
+-rw-r--r--  1 root root  1782 Jan  3  2014 envvars
+-rw-r--r--  1 root root 31063 Jan  3  2014 magic
+drwxr-xr-x  2 root root 12288 Aug 22 19:55 mods-available
+drwxr-xr-x  2 root root  4096 Aug 22 21:03 mods-enabled
+-rw-r--r--  1 root root   332 Aug 22 20:59 ports.conf
+drwxr-xr-x  2 root root  4096 Aug 22 21:01 sites-available
+drwxr-xr-x  2 root root  4096 Aug 22 21:02 sites-enabled
+ashleymk@sandbox:/etc/apache2$ ls -la sites-available
+total 28
+drwxr-xr-x 2 root root 4096 Aug 22 21:01 .
+drwxr-xr-x 8 root root 4096 Aug 22 19:55 ..
+-rw-r--r-- 1 root root 1332 Jan  7  2014 000-default.conf
+-rw-r--r-- 1 root root 6437 Jan  7  2014 default-ssl.conf
+-rw-r--r-- 1 root root  209 Aug 22 21:01 vboxsf.conf
+-rw-r--r-- 1 root root  209 Aug 22 20:58 vboxsf.xonf
+ashleymk@sandbox:/etc/apache2$ ls -la sites-enabled
+total 8
+drwxr-xr-x 2 root root 4096 Aug 22 21:02 .
+drwxr-xr-x 8 root root 4096 Aug 22 19:55 ..
+lrwxrwxrwx 1 root root   30 Aug 22 21:01 vboxsf.conf -> ../sites-available/vboxsf.conf
+ashleymk@sandbox:/etc/apache2$ sudoedit sites-available/vboxsf.conf
+[sudo] password for ashleymk: 
+ashleymk@sandbox:/etc/apache2$ sudoedit port.conf
+sudoedit: port.conf unchanged
+ashleymk@sandbox:/etc/apache2$ sudoedit ports.conf
+sudoedit: ports.conf unchanged
+ashleymk@sandbox:/etc/apache2$ sudo a2ensite vboxsf
+Site vboxsf already enabled
+ashleymk@sandbox:/etc/apache2$ sudo a2dissite 000-default
+Site 000-default already disabled
+ashleymk@sandbox:/etc/apache2$ sudo a2enmod rewrite
+Module rewrite already enabled
+ashleymk@sandbox:/etc/apache2$ sudo a2enmod vhost_alias
+Module vhost_alias already enabled
+ashleymk@sandbox:/etc/apache2$ sudo service apache2 restart
+ * Restarting web server apache2                                         [ OK ] 
+ashleymk@sandbox:/etc/apache2$ cd /etc/php5
+ashleymk@sandbox:/etc/php5$ ls -la
+total 20
+drwxr-xr-x  5 root root 4096 Aug 22 19:55 .
+drwxr-xr-x 80 root root 4096 Aug 22 21:18 ..
+drwxr-xr-x  3 root root 4096 Aug 22 19:55 apache2
+drwxr-xr-x  3 root root 4096 Aug 22 19:55 cli
+drwxr-xr-x  2 root root 4096 Aug 22 19:55 mods-available
+ashleymk@sandbox:/etc/php5$ ls -la mods-available
+total 36
+drwxr-xr-x 2 root root 4096 Aug 22 19:55 .
+drwxr-xr-x 5 root root 4096 Aug 22 19:55 ..
+-rw-r--r-- 1 root root   68 Feb 18  2014 json.ini
+-rw-r--r-- 1 root root   71 Jul  2 11:56 mysqli.ini
+-rw-r--r-- 1 root root   70 Jul  2 11:56 mysql.ini
+-rw-r--r-- 1 root root   83 Jul  2 11:56 opcache.ini
+-rw-r--r-- 1 root root   66 Jul  2 11:56 pdo.ini
+-rw-r--r-- 1 root root   74 Jul  2 11:56 pdo_mysql.ini
+-rw-r--r-- 1 root root   76 Jul  2 11:56 readline.ini
+ashleymk@sandbox:/etc/php5$ ls -la apache2
+total 84
+drwxr-xr-x 3 root root  4096 Aug 22 19:55 .
+drwxr-xr-x 5 root root  4096 Aug 22 19:55 ..
+drwxr-xr-x 2 root root  4096 Aug 22 19:55 conf.d
+-rw-r--r-- 1 root root 69891 Jul  2 11:56 php.ini
+ashleymk@sandbox:/etc/php5$ ls -la apache2/conf.d
+total 8
+drwxr-xr-x 2 root root 4096 Aug 22 19:55 .
+drwxr-xr-x 3 root root 4096 Aug 22 19:55 ..
+lrwxrwxrwx 1 root root   32 Aug 22 19:55 05-opcache.ini -> ../../mods-available/opcache.ini
+lrwxrwxrwx 1 root root   28 Aug 22 19:55 10-pdo.ini -> ../../mods-available/pdo.ini
+lrwxrwxrwx 1 root root   29 Aug 22 19:55 20-json.ini -> ../../mods-available/json.ini
+lrwxrwxrwx 1 root root   31 Aug 22 19:55 20-mysqli.ini -> ../../mods-available/mysqli.ini
+lrwxrwxrwx 1 root root   30 Aug 22 19:55 20-mysql.ini -> ../../mods-available/mysql.ini
+lrwxrwxrwx 1 root root   34 Aug 22 19:55 20-pdo_mysql.ini -> ../../mods-available/pdo_mysql.ini
+lrwxrwxrwx 1 root root   33 Aug 22 19:55 20-readline.ini -> ../../mods-available/readline.ini
+ashleymk@sandbox:/etc/php5$ sudoedit /etc/php5/mods-available/custom.ini
+ashleymk@sandbox:/etc/php5$ sudo php5enmod custom
+ashleymk@sandbox:/etc/php5$ php5query -M
+pdo_mysql
+readline
+opcache
+custom
+mysqli
+mysql
+json
+pdo
+ashleymk@sandbox:/etc/php5$ sudo touch /var/log/php_errors.log
+ashleymk@sandbox:/etc/php5$ sudo chown www-data: /var/log/php_errors.log
+ashleymk@sandbox:/etc/php5$ sudo apt-get install php5-intl php5-sqlite php5-mcrtpy
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+E: Unable to locate package php5-mcrtpy
+ashleymk@sandbox:/etc/php5$ sudo php5enmod mcypt
+WARNING: Module mcypt ini file doesn't exist under /etc/php5/mods-available
+WARNING: Module mcypt ini file doesn't exist under /etc/php5/mods-available
+ashleymk@sandbox:/etc/php5$ apt-get install php5-intl php5-sqlite php5-mcrypt
+E: Could not open lock file /var/lib/dpkg/lock - open (13: Permission denied)
+E: Unable to lock the administration directory (/var/lib/dpkg/), are you root?
+ashleymk@sandbox:/etc/php5$ sudo touch /var/log/php_errors.log
+ashleymk@sandbox:/etc/php5$ sudo chown www-data: /var/log/php_errors.log
+ashleymk@sandbox:/etc/php5$ sudo apt-get install php5-intl php5-sqlite php5-mcrypt
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following extra packages will be installed:
+  libicu52 libmcrypt4
+Suggested packages:
+  libmcrypt-dev mcrypt
+The following NEW packages will be installed:
+  libicu52 libmcrypt4 php5-intl php5-mcrypt php5-sqlite
+0 upgraded, 5 newly installed, 0 to remove and 4 not upgraded.
+Need to get 6,962 kB of archives.
+After this operation, 28.8 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://us.archive.ubuntu.com/ubuntu/ trusty-updates/main libicu52 amd64 52.1-3ubuntu0.3 [6,752 kB]
+Get:2 http://us.archive.ubuntu.com/ubuntu/ trusty-updates/universe php5-intl amd64 5.5.9+dfsg-1ubuntu4.11 [109 kB]
+Get:3 http://us.archive.ubuntu.com/ubuntu/ trusty-updates/main php5-sqlite amd64 5.5.9+dfsg-1ubuntu4.11 [24.3 kB]
+Get:4 http://us.archive.ubuntu.com/ubuntu/ trusty/universe libmcrypt4 amd64 2.5.8-3.1ubuntu1 [61.9 kB]
+Get:5 http://us.archive.ubuntu.com/ubuntu/ trusty/universe php5-mcrypt amd64 5.4.6-0ubuntu5 [15.4 kB]
+Fetched 6,962 kB in 3s (1,928 kB/s)
+Selecting previously unselected package libicu52:amd64.
+(Reading database ... 76150 files and directories currently installed.)
+Preparing to unpack .../libicu52_52.1-3ubuntu0.3_amd64.deb ...
+Unpacking libicu52:amd64 (52.1-3ubuntu0.3) ...
+Selecting previously unselected package php5-intl.
+Preparing to unpack .../php5-intl_5.5.9+dfsg-1ubuntu4.11_amd64.deb ...
+Unpacking php5-intl (5.5.9+dfsg-1ubuntu4.11) ...
+Selecting previously unselected package php5-sqlite.
+Preparing to unpack .../php5-sqlite_5.5.9+dfsg-1ubuntu4.11_amd64.deb ...
+Unpacking php5-sqlite (5.5.9+dfsg-1ubuntu4.11) ...
+Selecting previously unselected package libmcrypt4.
+Preparing to unpack .../libmcrypt4_2.5.8-3.1ubuntu1_amd64.deb ...
+Unpacking libmcrypt4 (2.5.8-3.1ubuntu1) ...
+Selecting previously unselected package php5-mcrypt.
+Preparing to unpack .../php5-mcrypt_5.4.6-0ubuntu5_amd64.deb ...
+Unpacking php5-mcrypt (5.4.6-0ubuntu5) ...
+Processing triggers for libapache2-mod-php5 (5.5.9+dfsg-1ubuntu4.11) ...
+Setting up libicu52:amd64 (52.1-3ubuntu0.3) ...
+Setting up php5-intl (5.5.9+dfsg-1ubuntu4.11) ...
+
+Creating config file /etc/php5/mods-available/intl.ini with new version
+php5_invoke: Enable module intl for cli SAPI
+php5_invoke: Enable module intl for apache2 SAPI
+Setting up php5-sqlite (5.5.9+dfsg-1ubuntu4.11) ...
+
+Creating config file /etc/php5/mods-available/sqlite3.ini with new version
+php5_invoke: Enable module sqlite3 for cli SAPI
+php5_invoke: Enable module sqlite3 for apache2 SAPI
+
+Creating config file /etc/php5/mods-available/pdo_sqlite.ini with new version
+php5_invoke: Enable module pdo_sqlite for cli SAPI
+php5_invoke: Enable module pdo_sqlite for apache2 SAPI
+Setting up libmcrypt4 (2.5.8-3.1ubuntu1) ...
+Setting up php5-mcrypt (5.4.6-0ubuntu5) ...
+Processing triggers for libc-bin (2.19-0ubuntu6.6) ...
+Processing triggers for libapache2-mod-php5 (5.5.9+dfsg-1ubuntu4.11) ...
+ashleymk@sandbox:/etc/php5$ sudo php5enmod mcrypt
+ashleymk@sandbox:/etc/php5$ sudo service apache2 restart
+ * Restarting web server apache2                                              [ OK ] 
+ashleymk@sandbox:/etc/php5$ tail /var/log/php_errors.log
+[22-Aug-2015 21:46:19 America/New_York] PHP Notice:  Undefined variable: array in /media/sf_sandbox/errors.php on line 3
+[22-Aug-2015 21:46:19 America/New_York] PHP Warning:  fopen() expects at least 2 parameters, 0 given in /media/sf_sandbox/errors.php on line 5
+[22-Aug-2015 21:46:19 America/New_York] PHP Fatal error:  Call to undefined function fail() in /media/sf_sandbox/errors.php on line 7
+ashleymk@sandbox:/etc/php5$ sudoedit /etc/mysql/my.conf
+sudoedit: /etc/mysql/my.conf unchanged
+ashleymk@sandbox:/etc/php5$ sudoedit /etc/mysql/my.cnf
+ashleymk@sandbox:/etc/php5$ sudo service myaql restart
+myaql: unrecognized service
+ashleymk@sandbox:/etc/php5$ sudo service mysql restart
+mysql stop/waiting
+mysql start/running, process 1938
+ashleymk@sandbox:/etc/php5$ mysql -uroot -proot
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 36
+Server version: 5.5.44-0ubuntu0.14.04.1-log (Ubuntu)
+
+Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> UPDATE mysql.user SET host='%' WHERE user='root' AND host='sandbox'; 
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> FLUSH PRIVILEGES;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> exit
+Bye
+ashleymk@sandbox:/etc/php5$ sudo apt-get -y install exim4
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following extra packages will be installed:
+  exim4-base exim4-config exim4-daemon-light heirloom-mailx
+Suggested packages:
+  mail-reader eximon4 exim4-doc-html exim4-doc-info spf-tools-perl swaks
+Recommended packages:
+  mailx
+The following NEW packages will be installed:
+  exim4 exim4-base exim4-config exim4-daemon-light heirloom-mailx
+0 upgraded, 5 newly installed, 0 to remove and 4 not upgraded.
+Need to get 1,814 kB of archives.
+After this operation, 4,297 kB of additional disk space will be used.
+Get:1 http://us.archive.ubuntu.com/ubuntu/ trusty/main exim4-config all 4.82-3ubuntu2 [298 kB]
+Get:2 http://us.archive.ubuntu.com/ubuntu/ trusty/main exim4-base amd64 4.82-3ubuntu2 [854 kB]
+Get:3 http://us.archive.ubuntu.com/ubuntu/ trusty/main exim4-daemon-light amd64 4.82-3ubuntu2 [436 kB]
+Get:4 http://us.archive.ubuntu.com/ubuntu/ trusty/main exim4 all 4.82-3ubuntu2 [7,876 B]
+Get:5 http://us.archive.ubuntu.com/ubuntu/ trusty-updates/universe heirloom-mailx amd64 12.5-2+deb7u1build0.14.04.1 [219 kB]
+Fetched 1,814 kB in 1s (1,561 kB/s)     
+Preconfiguring packages ...
+Selecting previously unselected package exim4-config.
+(Reading database ... 76197 files and directories currently installed.)
+Preparing to unpack .../exim4-config_4.82-3ubuntu2_all.deb ...
+Unpacking exim4-config (4.82-3ubuntu2) ...
+Selecting previously unselected package exim4-base.
+Preparing to unpack .../exim4-base_4.82-3ubuntu2_amd64.deb ...
+Unpacking exim4-base (4.82-3ubuntu2) ...
+Selecting previously unselected package exim4-daemon-light.
+Preparing to unpack .../exim4-daemon-light_4.82-3ubuntu2_amd64.deb ...
+Unpacking exim4-daemon-light (4.82-3ubuntu2) ...
+Selecting previously unselected package exim4.
+Preparing to unpack .../exim4_4.82-3ubuntu2_all.deb ...
+Unpacking exim4 (4.82-3ubuntu2) ...
+Selecting previously unselected package heirloom-mailx.
+Preparing to unpack .../heirloom-mailx_12.5-2+deb7u1build0.14.04.1_amd64.deb ...
+Unpacking heirloom-mailx (12.5-2+deb7u1build0.14.04.1) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+Processing triggers for ureadahead (0.100.0-16) ...
+ureadahead will be reprofiled on next reboot
+Setting up exim4-config (4.82-3ubuntu2) ...
+Adding system-user for exim (v4)
+Setting up exim4-base (4.82-3ubuntu2) ...
+exim: DB upgrade, deleting hints-db
+Setting up heirloom-mailx (12.5-2+deb7u1build0.14.04.1) ...
+update-alternatives: using /usr/bin/heirloom-mailx to provide /usr/bin/mailx (mailx) in auto mode
+Processing triggers for ureadahead (0.100.0-16) ...
+Setting up exim4-daemon-light (4.82-3ubuntu2) ...
+ * Starting MTA                                                               [ OK ] 
+Setting up exim4 (4.82-3ubuntu2) ...
+ashleymk@sandbox:/etc/php5$ sudo dpkg-reconfigure exim4-config
+ * Stopping MTA for restart                                                   [ OK ] 
+ * Restarting MTA                                                             [ OK ] 
+ashleymk@sandbox:/etc/php5$ sudo dpkg-reconfigure exim4-config
+
+
+
+                    
+
+^[[A^[[A^[[A^[[A^[[A * Stopping MTA for restart                                                          
+
+                                                                              [ OK ]
+ * Restarting MTA                                                             [ OK ] 
+ashleymk@sandbox:/etc/php5$ 
+ashleymk@sandbox:/etc/php5$ 
+ashleymk@sandbox:/etc/php5$ 
+ashleymk@sandbox:/etc/php5$ 
+ashleymk@sandbox:/etc/php5$ 
+ashleymk@sandbox:/etc/php5$ sudo apt-get -y install exim4
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+exim4 is already the newest version.
+0 upgraded, 0 newly installed, 0 to remove and 4 not upgraded.
+ashleymk@sandbox:/etc/php5$ 
+ashleymk@sandbox:/etc/php5$ 
+ashleymk@sandbox:/etc/php5$ sudoedit /etc/exim4/passwd/client
+sudoedit: /etc/exim4/passwd/client unchanged
+ashleymk@sandbox:/etc/php5$ sudoedit /etc/exim4/passwd.client
+ashleymk@sandbox:/etc/php5$ mail USERNAME@gmail.com
+Subject: Test
+Hello, world!
+EOT
+ashleymk@sandbox:/etc/php5$ sudo apt-get - install phpmyadmin
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following extra packages will be installed:
+  dbconfig-common fontconfig-config fonts-dejavu-core javascript-common
+  libfontconfig1 libgd3 libjbig0 libjpeg-turbo8 libjpeg8 libjs-codemirror
+  libjs-jquery libjs-jquery-cookie libjs-jquery-event-drag
+  libjs-jquery-metadata libjs-jquery-mousewheel libjs-jquery-tablesorter
+  libjs-jquery-ui libjs-underscore libtiff5 libvpx1 libxpm4 php-gettext
+  php5-gd
+Suggested packages:
+  libgd-tools libjs-jquery-ui-docs www-browser
+The following NEW packages will be installed:
+  dbconfig-common fontconfig-config fonts-dejavu-core javascript-common
+  libfontconfig1 libgd3 libjbig0 libjpeg-turbo8 libjpeg8 libjs-codemirror
+  libjs-jquery libjs-jquery-cookie libjs-jquery-event-drag
+  libjs-jquery-metadata libjs-jquery-mousewheel libjs-jquery-tablesorter
+  libjs-jquery-ui libjs-underscore libtiff5 libvpx1 libxpm4 php-gettext
+  php5-gd phpmyadmin
+0 upgraded, 24 newly installed, 0 to remove and 4 not upgraded.
+Need to get 7,842 kB of archives.
+After this operation, 35.8 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://us.archive.ubuntu.com/ubuntu/ trusty/main fonts-dejavu-core all 2.34-1ubuntu1 [1,024 kB]
+Get:2 http://us.archive.ubuntu.com/ubuntu/ trusty-updates/main fontconfig-config all 2.11.0-0ubuntu4.1 [47.4 kB]
+Get:3 http://us.archive.ubuntu.com/ubuntu/ trusty-updates/main libfontconfig1 amd64 2.11.0-0ubuntu4.1 [123 kB]
+Get:4 http://us.archive.ubuntu.com/ubuntu/ trusty/main libjpeg-turbo8 amd64 1.3.0-0ubuntu2 [104 kB]
+Get:5 http://us.archive.ubuntu.com/ubuntu/ trusty/main libjpeg8 amd64 8c-2ubuntu8 [2,194 B]
+Get:6 http://us.archive.ubuntu.com/ubuntu/ trusty-updates/main libjbig0 amd64 2.0-2ubuntu4.1 [26.1 kB]
+Get:7 http://us.archive.ubuntu.com/ubuntu/ trusty-updates/main libtiff5 amd64 4.0.3-7ubuntu0.3 [143 kB]
+Get:8 http://us.archive.ubuntu.com/ubuntu/ trusty/main libvpx1 amd64 1.3.0-2 [556 kB]
+Get:9 http://us.archive.ubuntu.com/ubuntu/ trusty/main libxpm4 amd64 1:3.5.10-1 [38.3 kB]
+Get:10 http://us.archive.ubuntu.com/ubuntu/ trusty/main libgd3 amd64 2.1.0-3 [147 kB]
+Get:11 http://us.archive.ubuntu.com/ubuntu/ trusty-updates/main php5-gd amd64 5.5.9+dfsg-1ubuntu4.11 [28.1 kB]
+Get:12 http://us.archive.ubuntu.com/ubuntu/ trusty/main dbconfig-common all 1.8.47+nmu1 [468 kB]
+Get:13 http://us.archive.ubuntu.com/ubuntu/ trusty/main javascript-common all 11 [6,066 B]
+Get:14 http://us.archive.ubuntu.com/ubuntu/ trusty/main libjs-jquery all 1.7.2+dfsg-2ubuntu1 [78.8 kB]
+Get:15 http://us.archive.ubuntu.com/ubuntu/ trusty/universe libjs-jquery-cookie all 8-2 [6,502 B]
+Get:16 http://us.archive.ubuntu.com/ubuntu/ trusty/universe libjs-jquery-event-drag all 8-2 [11.2 kB]
+Get:17 http://us.archive.ubuntu.com/ubuntu/ trusty/main libjs-jquery-metadata all 8-2 [6,856 B]
+Get:18 http://us.archive.ubuntu.com/ubuntu/ trusty/universe libjs-jquery-mousewheel all 8-2 [7,076 B]
+Get:19 http://us.archive.ubuntu.com/ubuntu/ trusty/main libjs-jquery-tablesorter all 8-2 [64.0 kB]
+Get:20 http://us.archive.ubuntu.com/ubuntu/ trusty/universe libjs-jquery-ui all 1.10.1+dfsg-1 [458 kB]
+Get:21 http://us.archive.ubuntu.com/ubuntu/ trusty/main libjs-underscore all 1.4.4-2ubuntu1 [45.6 kB]
+Get:22 http://us.archive.ubuntu.com/ubuntu/ trusty/universe php-gettext all 1.0.11-1 [17.2 kB]
+Get:23 http://us.archive.ubuntu.com/ubuntu/ trusty/universe libjs-codemirror all 2.23-1 [210 kB]
+Get:24 http://us.archive.ubuntu.com/ubuntu/ trusty/universe phpmyadmin all 4:4.0.10-1 [4,224 kB]
+Fetched 7,842 kB in 3s (2,461 kB/s)      
+Preconfiguring packages ...
+Selecting previously unselected package fonts-dejavu-core.
+(Reading database ... 76396 files and directories currently installed.)
+Preparing to unpack .../fonts-dejavu-core_2.34-1ubuntu1_all.deb ...
+Unpacking fonts-dejavu-core (2.34-1ubuntu1) ...
+Selecting previously unselected package fontconfig-config.
+Preparing to unpack .../fontconfig-config_2.11.0-0ubuntu4.1_all.deb ...
+Unpacking fontconfig-config (2.11.0-0ubuntu4.1) ...
+Selecting previously unselected package libfontconfig1:amd64.
+Preparing to unpack .../libfontconfig1_2.11.0-0ubuntu4.1_amd64.deb ...
+Unpacking libfontconfig1:amd64 (2.11.0-0ubuntu4.1) ...
+Selecting previously unselected package libjpeg-turbo8:amd64.
+Preparing to unpack .../libjpeg-turbo8_1.3.0-0ubuntu2_amd64.deb ...
+Unpacking libjpeg-turbo8:amd64 (1.3.0-0ubuntu2) ...
+Selecting previously unselected package libjpeg8:amd64.
+Preparing to unpack .../libjpeg8_8c-2ubuntu8_amd64.deb ...
+Unpacking libjpeg8:amd64 (8c-2ubuntu8) ...
+Selecting previously unselected package libjbig0:amd64.
+Preparing to unpack .../libjbig0_2.0-2ubuntu4.1_amd64.deb ...
+Unpacking libjbig0:amd64 (2.0-2ubuntu4.1) ...
+Selecting previously unselected package libtiff5:amd64.
+Preparing to unpack .../libtiff5_4.0.3-7ubuntu0.3_amd64.deb ...
+Unpacking libtiff5:amd64 (4.0.3-7ubuntu0.3) ...
+Selecting previously unselected package libvpx1:amd64.
+Preparing to unpack .../libvpx1_1.3.0-2_amd64.deb ...
+Unpacking libvpx1:amd64 (1.3.0-2) ...
+Selecting previously unselected package libxpm4:amd64.
+Preparing to unpack .../libxpm4_1%3a3.5.10-1_amd64.deb ...
+Unpacking libxpm4:amd64 (1:3.5.10-1) ...
+Selecting previously unselected package libgd3:amd64.
+Preparing to unpack .../libgd3_2.1.0-3_amd64.deb ...
+Unpacking libgd3:amd64 (2.1.0-3) ...
+Selecting previously unselected package php5-gd.
+Preparing to unpack .../php5-gd_5.5.9+dfsg-1ubuntu4.11_amd64.deb ...
+Unpacking php5-gd (5.5.9+dfsg-1ubuntu4.11) ...
+Selecting previously unselected package dbconfig-common.
+Preparing to unpack .../dbconfig-common_1.8.47+nmu1_all.deb ...
+Unpacking dbconfig-common (1.8.47+nmu1) ...
+Selecting previously unselected package javascript-common.
+Preparing to unpack .../javascript-common_11_all.deb ...
+Unpacking javascript-common (11) ...
+Selecting previously unselected package libjs-jquery.
+Preparing to unpack .../libjs-jquery_1.7.2+dfsg-2ubuntu1_all.deb ...
+Unpacking libjs-jquery (1.7.2+dfsg-2ubuntu1) ...
+Selecting previously unselected package libjs-jquery-cookie.
+Preparing to unpack .../libjs-jquery-cookie_8-2_all.deb ...
+Unpacking libjs-jquery-cookie (8-2) ...
+Selecting previously unselected package libjs-jquery-event-drag.
+Preparing to unpack .../libjs-jquery-event-drag_8-2_all.deb ...
+Unpacking libjs-jquery-event-drag (8-2) ...
+Selecting previously unselected package libjs-jquery-metadata.
+Preparing to unpack .../libjs-jquery-metadata_8-2_all.deb ...
+Unpacking libjs-jquery-metadata (8-2) ...
+Selecting previously unselected package libjs-jquery-mousewheel.
+Preparing to unpack .../libjs-jquery-mousewheel_8-2_all.deb ...
+Unpacking libjs-jquery-mousewheel (8-2) ...
+Selecting previously unselected package libjs-jquery-tablesorter.
+Preparing to unpack .../libjs-jquery-tablesorter_8-2_all.deb ...
+Unpacking libjs-jquery-tablesorter (8-2) ...
+Selecting previously unselected package libjs-jquery-ui.
+Preparing to unpack .../libjs-jquery-ui_1.10.1+dfsg-1_all.deb ...
+Unpacking libjs-jquery-ui (1.10.1+dfsg-1) ...
+Selecting previously unselected package libjs-underscore.
+Preparing to unpack .../libjs-underscore_1.4.4-2ubuntu1_all.deb ...
+Unpacking libjs-underscore (1.4.4-2ubuntu1) ...
+Selecting previously unselected package php-gettext.
+Preparing to unpack .../php-gettext_1.0.11-1_all.deb ...
+Unpacking php-gettext (1.0.11-1) ...
+Selecting previously unselected package libjs-codemirror.
+Preparing to unpack .../libjs-codemirror_2.23-1_all.deb ...
+Unpacking libjs-codemirror (2.23-1) ...
+Selecting previously unselected package phpmyadmin.
+Preparing to unpack .../phpmyadmin_4%3a4.0.10-1_all.deb ...
+Unpacking phpmyadmin (4:4.0.10-1) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+Processing triggers for libapache2-mod-php5 (5.5.9+dfsg-1ubuntu4.11) ...
+Setting up fonts-dejavu-core (2.34-1ubuntu1) ...
+Setting up fontconfig-config (2.11.0-0ubuntu4.1) ...
+Setting up libfontconfig1:amd64 (2.11.0-0ubuntu4.1) ...
+Setting up libjpeg-turbo8:amd64 (1.3.0-0ubuntu2) ...
+Setting up libjpeg8:amd64 (8c-2ubuntu8) ...
+Setting up libjbig0:amd64 (2.0-2ubuntu4.1) ...
+Setting up libtiff5:amd64 (4.0.3-7ubuntu0.3) ...
+Setting up libvpx1:amd64 (1.3.0-2) ...
+Setting up libxpm4:amd64 (1:3.5.10-1) ...
+Setting up libgd3:amd64 (2.1.0-3) ...
+Setting up php5-gd (5.5.9+dfsg-1ubuntu4.11) ...
+
+Creating config file /etc/php5/mods-available/gd.ini with new version
+php5_invoke: Enable module gd for cli SAPI
+php5_invoke: Enable module gd for apache2 SAPI
+Setting up dbconfig-common (1.8.47+nmu1) ...
+
+Creating config file /etc/dbconfig-common/config with new version
+Setting up javascript-common (11) ...
+apache2_invoke: Enable configuration javascript-common
+ * Reloading web server apache2                                                       * 
+Setting up libjs-jquery (1.7.2+dfsg-2ubuntu1) ...
+Setting up libjs-jquery-cookie (8-2) ...
+Setting up libjs-jquery-event-drag (8-2) ...
+Setting up libjs-jquery-metadata (8-2) ...
+Setting up libjs-jquery-mousewheel (8-2) ...
+Setting up libjs-jquery-tablesorter (8-2) ...
+Setting up libjs-jquery-ui (1.10.1+dfsg-1) ...
+Setting up libjs-underscore (1.4.4-2ubuntu1) ...
+Setting up php-gettext (1.0.11-1) ...
+Setting up libjs-codemirror (2.23-1) ...
+Setting up phpmyadmin (4:4.0.10-1) ...
+dbconfig-common: writing config to /etc/dbconfig-common/phpmyadmin.conf
+
+Creating config file /etc/dbconfig-common/phpmyadmin.conf with new version
+
+Creating config file /etc/phpmyadmin/config-db.php with new version
+granting access to database phpmyadmin for phpmyadmin@localhost: success.
+verifying access for phpmyadmin@localhost: success.
+creating database phpmyadmin: success.
+verifying database phpmyadmin exists: success.
+populating database via sql...  done.
+dbconfig-common: flushing administrative password
+apache2_invoke: Enable configuration phpmyadmin
+ * Reloading web server apache2                                                       * 
+ * Reloading web server apache2                                                       * 
+Processing triggers for libc-bin (2.19-0ubuntu6.6) ...
+Processing triggers for libapache2-mod-php5 (5.5.9+dfsg-1ubuntu4.11) ...
+ashleymk@sandbox:/etc/php5$ sudoedit /etc/phpmyadmin/config.inc.php
+ashleymk@sandbox:/etc/php5$ sudoedit /etc/phpmyadmin/config.inc.php
+ashleymk@sandbox:/etc/php5$ 
