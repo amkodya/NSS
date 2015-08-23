@@ -581,4 +581,19 @@ Processing triggers for libc-bin (2.19-0ubuntu6.6) ...
 Processing triggers for libapache2-mod-php5 (5.5.9+dfsg-1ubuntu4.11) ...
 ashleymk@sandbox:/etc/php5$ sudoedit /etc/phpmyadmin/config.inc.php
 ashleymk@sandbox:/etc/php5$ sudoedit /etc/phpmyadmin/config.inc.php
-ashleymk@sandbox:/etc/php5$ 
+ashleymk@sandbox:/etc/php5$ cd /media/sf_sandbox
+ashleymk@sandbox:/media/sf_sandbox$ /media/sf_sandbox$ nano.index.php
+-bash: /media/sf_sandbox$: No such file or directory
+ashleymk@sandbox:/media/sf_sandbox$ /media/sf_sandbox$ nano index.php
+-bash: /media/sf_sandbox$: No such file or directory
+ashleymk@sandbox:/media/sf_sandbox$ nano index.php
+ashleymk@sandbox:/media/sf_sandbox$ wget http://repo.ajenti.org/debian/key -0- | sudoapt-key add -
+-bash: sudoapt-key: command not found
+wget: invalid option -- '0'
+wget: invalid option -- '-'
+Usage: wget [OPTION]... [URL]...
+
+Try `wget --help' for more options.
+ashleymk@sandbox:/media/sf_sandbox$ logout
+Connection to sandbox.dev closed.
+Ashleys-MacBook-Pro:~ electrikoala$ 
