@@ -185,4 +185,86 @@ Ashleys-MacBook-Pro:unix_files electrikoala$ cmod ugo=r short_file.txt
 Ashleys-MacBook-Pro:unix_files electrikoala$ chmod ugo=r short_file.txt
 Ashleys-MacBook-Pro:unix_files electrikoala$ chmod g+w test1
 Ashleys-MacBook-Pro:unix_files electrikoala$ chmod -R g+w test1
+Ashleys-MacBook-Pro:unix_files electrikoala$ sudo ls -la
+Password:
+total 128
+drwxrwxrwx@ 10 electrikoala  staff    340 Aug 21 08:31 .
+drwx------+ 29 electrikoala  staff    986 Aug 30 09:45 ..
+-rw-rw-rw-@  1 electrikoala  staff   6148 Aug 29 20:53 .DS_Store
+-rw-rw-rw-@  1 electrikoala  staff     10 Feb  6  2011 linkedfile.txt
+-rw-rw-rw-@  1 electrikoala  staff  36232 Feb  6  2011 lorem_ipsum.txt
+-rw-rw-rw-@  1 electrikoala  staff     55 Feb  6  2011 new_file.txt
+-rw-rw-rw-@  1 electrikoala  staff     81 Feb  6  2011 newer_file.txt
+-rw-rw-rw-@  1 electrikoala  staff     17 Feb  6  2011 overwrite_test2.txt
+-r--r--r--@  1 electrikoala  staff     81 Feb  6  2011 short_file.txt
+drwxrwxrwx@  3 electrikoala  staff    102 Feb  6  2011 test1
+Ashleys-MacBook-Pro:unix_files electrikoala$ chown electrikoala unix_files/linkedfile.txt
+chown: unix_files/linkedfile.txt: No such file or directory
+Ashleys-MacBook-Pro:unix_files electrikoala$ chown electrikoala linkedfile.txt
+Ashleys-MacBook-Pro:unix_files electrikoala$ whoami
+electrikoala
+Ashleys-MacBook-Pro:unix_files electrikoala$ ls -la
+total 128
+drwxrwxrwx@ 10 electrikoala  staff    340 Aug 21 08:31 .
+drwx------+ 29 electrikoala  staff    986 Aug 30 09:45 ..
+-rw-rw-rw-@  1 electrikoala  staff   6148 Aug 29 20:53 .DS_Store
+-rw-rw-rw-@  1 electrikoala  staff     10 Feb  6  2011 linkedfile.txt
+-rw-rw-rw-@  1 electrikoala  staff  36232 Feb  6  2011 lorem_ipsum.txt
+-rw-rw-rw-@  1 electrikoala  staff     55 Feb  6  2011 new_file.txt
+-rw-rw-rw-@  1 electrikoala  staff     81 Feb  6  2011 newer_file.txt
+-rw-rw-rw-@  1 electrikoala  staff     17 Feb  6  2011 overwrite_test2.txt
+-r--r--r--@  1 electrikoala  staff     81 Feb  6  2011 short_file.txt
+drwxrwxrwx@  3 electrikoala  staff    102 Feb  6  2011 test1
+Ashleys-MacBook-Pro:unix_files electrikoala$ home
+-bash: home: command not found
+Ashleys-MacBook-Pro:unix_files electrikoala$ sudo -u electrikoala whoami
+electrikoala
+Ashleys-MacBook-Pro:unix_files electrikoala$ cat /etc/sudoers
+cat: /etc/sudoers: Permission denied
+Ashleys-MacBook-Pro:unix_files electrikoala$ sudo cat /etc/sudoers
+# sudoers file.
+#
+# This file MUST be edited with the 'visudo' command as root.
+# Failure to use 'visudo' may result in syntax or file permission errors
+# that prevent sudo from running.
+#
+# See the sudoers man page for the details on how to write a sudoers file.
+#
+
+# Host alias specification
+
+# User alias specification
+
+# Cmnd alias specification
+
+# Defaults specification
+Defaults	env_reset
+Defaults	env_keep += "BLOCKSIZE"
+Defaults	env_keep += "COLORFGBG COLORTERM"
+Defaults	env_keep += "__CF_USER_TEXT_ENCODING"
+Defaults	env_keep += "CHARSET LANG LANGUAGE LC_ALL LC_COLLATE LC_CTYPE"
+Defaults	env_keep += "LC_MESSAGES LC_MONETARY LC_NUMERIC LC_TIME"
+Defaults	env_keep += "LINES COLUMNS"
+Defaults	env_keep += "LSCOLORS"
+Defaults	env_keep += "SSH_AUTH_SOCK"
+Defaults	env_keep += "TZ"
+Defaults	env_keep += "DISPLAY XAUTHORIZATION XAUTHORITY"
+Defaults	env_keep += "EDITOR VISUAL"
+Defaults	env_keep += "HOME MAIL"
+
+# Runas alias specification
+
+# User privilege specification
+root	ALL=(ALL) ALL
+%admin	ALL=(ALL) ALL
+
+# Uncomment to allow people in group wheel to run all commands
+# %wheel	ALL=(ALL) ALL
+
+# Same thing without a password
+# %wheel	ALL=(ALL) NOPASSWD: ALL
+
+# Samples
+# %users  ALL=/sbin/mount /cdrom,/sbin/umount /cdrom
+# %users  localhost=/sbin/shutdown -h now
 Ashleys-MacBook-Pro:unix_files electrikoala$ 
