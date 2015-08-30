@@ -87,4 +87,102 @@ usage: chown [-fhv] [-R [-H | -L | -P]] owner[:group] file ...
        chown [-fhv] [-R [-H | -L | -P]] :group file ...
 Ashleys-MacBook-Pro:~ electrikoala$ chown -R electrikoala: linkdir linkedfile.txt
 chown: linkedfile.txt: No such file or directory
-Ashleys-MacBook-Pro:~ electrikoala$ 
+Ashleys-MacBook-Pro:~ electrikoala$ cd ~/Desktop/unix_files
+Ashleys-MacBook-Pro:unix_files electrikoala$ ls -la
+total 128
+drwxrwxrwx@ 10 electrikoala  staff    340 Aug 21 08:31 .
+drwx------+ 29 electrikoala  staff    986 Aug 30 09:45 ..
+-rw-rw-rw-@  1 electrikoala  staff   6148 Aug 29 20:53 .DS_Store
+-rw-rw-rw-@  1 electrikoala  staff     10 Feb  6  2011 linkedfile.txt
+-rw-rw-rw-@  1 electrikoala  staff  36232 Feb  6  2011 lorem_ipsum.txt
+-rw-rw-rw-@  1 electrikoala  staff     55 Feb  6  2011 new_file.txt
+-rw-rw-rw-@  1 electrikoala  staff     81 Feb  6  2011 newer_file.txt
+-rw-rw-rw-@  1 electrikoala  staff     17 Feb  6  2011 overwrite_test2.txt
+-rw-rw-rw-@  1 electrikoala  staff     81 Feb  6  2011 short_file.txt
+drwxrwxrwx@  3 electrikoala  staff    102 Feb  6  2011 test1
+Ashleys-MacBook-Pro:unix_files electrikoala$ ls -la /Users/electrikoala
+total 96
+drwxr-xr-x+ 33 electrikoala  staff   1122 Aug 21 17:18 .
+drwxr-xr-x   6 root          admin    204 Nov 15  2014 ..
+-r--------   1 electrikoala  staff      7 Nov 15  2014 .CFUserTextEncoding
+-rw-r--r--@  1 electrikoala  staff  14340 Aug 29 21:22 .DS_Store
+drwx------  21 electrikoala  staff    714 Aug 30 09:45 .Trash
+drwxr-xr-x   4 electrikoala  staff    136 Aug 28  2014 .adobe
+-rw-------   1 electrikoala  staff   4901 Aug 30 09:28 .bash_history
+drwxr-xr-x   3 electrikoala  staff    102 Sep  2  2014 .config
+drwx------   3 electrikoala  staff    102 Feb 21  2015 .cups
+-rw-r--r--   1 electrikoala  staff    326 May  9 16:09 .gitconfig
+-rw-------   1 electrikoala  staff     35 Aug 21 12:25 .lesshst
+drwxr-xr-x   4 electrikoala  staff    136 Jun 28 12:04 .phet
+drwx------   8 electrikoala  staff    272 Aug 22 20:16 .ssh
+drwxr-xr-x   3 electrikoala  staff    102 Mar 30 13:36 .subversion
+drwx------   7 electrikoala  staff    238 Mar  8 20:53 Applications
+drwxr-xr-x@  4 electrikoala  staff    136 Jan 21  2015 Books
+drwx------@  3 electrikoala  staff    102 Aug  2 14:11 Creative Cloud Files
+drwx------@  4 electrikoala  staff    136 Dec  7  2014 Creative Cloud Files (archived)
+drwx------+ 29 electrikoala  staff    986 Aug 30 09:45 Desktop
+drwx------+ 16 electrikoala  staff    544 Aug  4 23:37 Documents
+drwx------+ 68 electrikoala  staff   2312 Aug 29 21:35 Downloads
+drwxr-xr-x   3 electrikoala  staff    102 Sep  2  2014 GitHub
+drwx------@ 58 electrikoala  staff   1972 Aug  9 20:15 Library
+drwx------+  5 electrikoala  staff    170 Jul 29 14:19 Movies
+drwx------+  5 electrikoala  staff    170 Sep  2  2014 Music
+drwx------+ 10 electrikoala  staff    340 Jul 29 17:03 Pictures
+drwxr-xr-x+  5 electrikoala  staff    170 Aug 28  2014 Public
+drwxr-xr-x   3 electrikoala  staff    102 Aug 22 19:14 VirtualBox VMs
+lrwxr-xr-x   1 electrikoala  staff     14 Aug 21 17:16 linkdir -> linkedfile.txt
+-rw-r--r--   1 electrikoala  staff    133 Aug 20 21:35 my.si
+lrwxr-xr-x   1 electrikoala  staff     14 Aug 21 17:16 symlink -> linkedfile.txt
+drwxr-xr-x   4 electrikoala  staff    136 Aug 21 12:22 testdir
+drwxr-xr-x   3 electrikoala  staff    102 Aug 21 12:19 testdir.test1
+Ashleys-MacBook-Pro:unix_files electrikoala$ ls -la /Users/electrikoala/Pictures
+total 24360
+drwx------+ 10 electrikoala  staff      340 Jul 29 17:03 .
+drwxr-xr-x+ 33 electrikoala  staff     1122 Aug 21 17:18 ..
+-rw-r--r--@  1 electrikoala  staff     6148 Mar  1 23:00 .DS_Store
+-rw-r--r--   1 electrikoala  staff        0 Aug 28  2014 .localized
+drwxr-xr-x@  7 electrikoala  staff      238 Aug 21 21:51 Photo Booth Library
+drwxr-xr-x@ 14 electrikoala  staff      476 Jul 29 17:03 Photos Library.photoslibrary
+-rw-r--r--   1 electrikoala  staff  3106597 Mar  1 18:10 Scan 2015-3-1 18.10.16.pdf
+-rw-r--r--   1 electrikoala  staff  3479634 Mar  1 23:04 Scan 2015-3-1 23.04.21.pdf
+-rw-r--r--   1 electrikoala  staff  5872480 Mar  1 22:55 Scan V Elixirs Summary.pdf
+drwxr-xr-x@ 14 electrikoala  staff      476 May  1 17:33 iPhoto Library.migratedphotolibrary
+Ashleys-MacBook-Pro:unix_files electrikoala$ ls -la
+total 128
+drwxrwxrwx@ 10 electrikoala  staff    340 Aug 21 08:31 .
+drwx------+ 29 electrikoala  staff    986 Aug 30 09:45 ..
+-rw-rw-rw-@  1 electrikoala  staff   6148 Aug 29 20:53 .DS_Store
+-rw-rw-rw-@  1 electrikoala  staff     10 Feb  6  2011 linkedfile.txt
+-rw-rw-rw-@  1 electrikoala  staff  36232 Feb  6  2011 lorem_ipsum.txt
+-rw-rw-rw-@  1 electrikoala  staff     55 Feb  6  2011 new_file.txt
+-rw-rw-rw-@  1 electrikoala  staff     81 Feb  6  2011 newer_file.txt
+-rw-rw-rw-@  1 electrikoala  staff     17 Feb  6  2011 overwrite_test2.txt
+-rw-rw-rw-@  1 electrikoala  staff     81 Feb  6  2011 short_file.txt
+drwxrwxrwx@  3 electrikoala  staff    102 Feb  6  2011 test1
+Ashleys-MacBook-Pro:unix_files electrikoala$ chmod ugo=rx ownership.txt
+chmod: ownership.txt: No such file or directory
+Ashleys-MacBook-Pro:unix_files electrikoala$ cmod ugo=rx short_file.txt
+-bash: cmod: command not found
+Ashleys-MacBook-Pro:unix_files electrikoala$ chmod u=rwx,g=rw,o=r shoft_file.txt
+chmod: shoft_file.txt: No such file or directory
+Ashleys-MacBook-Pro:unix_files electrikoala$ chmod u=rwx,g=rw,o=r short_file.txt 
+Ashleys-MacBook-Pro:unix_files electrikoala$ chmod a-x short_file.txt
+Ashleys-MacBook-Pro:unix_files electrikoala$ ls -la
+total 128
+drwxrwxrwx@ 10 electrikoala  staff    340 Aug 21 08:31 .
+drwx------+ 29 electrikoala  staff    986 Aug 30 09:45 ..
+-rw-rw-rw-@  1 electrikoala  staff   6148 Aug 29 20:53 .DS_Store
+-rw-rw-rw-@  1 electrikoala  staff     10 Feb  6  2011 linkedfile.txt
+-rw-rw-rw-@  1 electrikoala  staff  36232 Feb  6  2011 lorem_ipsum.txt
+-rw-rw-rw-@  1 electrikoala  staff     55 Feb  6  2011 new_file.txt
+-rw-rw-rw-@  1 electrikoala  staff     81 Feb  6  2011 newer_file.txt
+-rw-rw-rw-@  1 electrikoala  staff     17 Feb  6  2011 overwrite_test2.txt
+-rw-rw-r--@  1 electrikoala  staff     81 Feb  6  2011 short_file.txt
+drwxrwxrwx@  3 electrikoala  staff    102 Feb  6  2011 test1
+Ashleys-MacBook-Pro:unix_files electrikoala$ nano short_file.txt
+Ashleys-MacBook-Pro:unix_files electrikoala$ cmod ugo=r short_file.txt
+-bash: cmod: command not found
+Ashleys-MacBook-Pro:unix_files electrikoala$ chmod ugo=r short_file.txt
+Ashleys-MacBook-Pro:unix_files electrikoala$ chmod g+w test1
+Ashleys-MacBook-Pro:unix_files electrikoala$ chmod -R g+w test1
+Ashleys-MacBook-Pro:unix_files electrikoala$ 
